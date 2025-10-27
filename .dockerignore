@@ -1,0 +1,27 @@
+# Windows 專用檔案
+*.bat
+*.ps1
+
+# Python 緩存
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# 本地資料和進度檔案 (這些應該在容器內部生成)
+data/
+download_progress.json
+download_progress_backup_*.json
+*.log
+
+# IDE/編輯器設定
+.vscode/
+.idea/
+
+# Git 檔案
+.git
+.gitignore
+
+# Docker 檔案
+Dockerfile
+.dockerignore

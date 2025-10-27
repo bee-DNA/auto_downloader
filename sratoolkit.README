@@ -1,0 +1,11 @@
+這個目錄應該包含完整的 SRA Toolkit for Windows（例如 sratoolkit.3.2.1-win64）。
+為了讓 `auto_downloader` 可移植，請將原始的 `data_collector/sratoolkit.3.2.1-win64` 資料夾完整複製到這裡，或將 `sratoolkit.3.2.1-win64.zip` 解壓到本目錄。若要自動化，請於 SETUP.bat 中啟用複製。
+
+如果儲存空間有限，您也可以只複製 `bin\prefetch.exe`、`bin\fasterq-dump.exe` 及必要的 DLL，但完整複製是最保險的方法。
+
+若您已經將整個 toolkit 放入上層 `..\sratoolkit.3.2.1-win64`（專案根目錄），`complete_downloader.py` 與 `SETUP.bat` 會自動優先使用本地目錄下的版本。
+
+NCBI key 已由使用者提供，請在 `config.py` 或環境變數中設定：
+  NCBI_API_KEY=cbc34d71d57af75c93952af5d6b51d58d008
+
+授權與說明：請確保您遵守 NCBI 與 sratoolkit 的授權條款。

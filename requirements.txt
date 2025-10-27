@@ -1,0 +1,112 @@
+# ============================================
+# Auto Downloader 完整依賴清單
+# ============================================
+
+# SFTP 連接（上傳到 NAS）
+paramiko>=3.0.0
+
+# 進度條顯示（可選，推薦安裝）
+tqdm>=4.65.0
+
+# ============================================
+# 系統要求
+# ============================================
+# Python: >= 3.8
+# SRA Toolkit: >= 3.0.0 (需手動安裝)
+#   - Windows: https://github.com/ncbi/sra-tools/wiki/01.-Downloading-SRA-Toolkit
+#   - 或使用 winget: winget install NCBI.SRA-Toolkit
+#
+# 操作系統: Windows / Linux / macOS
+
+# ============================================
+# 安裝方式
+# ============================================
+# 1. 自動安裝（推薦）:
+#    SETUP.bat 會自動執行: pip install -r requirements.txt
+#
+# 2. 手動安裝:
+#    pip install -r requirements.txt
+#
+# 3. 驗證安裝:
+#    python check_environment.py
+
+# ============================================
+# 可選套件（提升體驗）
+# ============================================
+# 彩色終端輸出
+# colorama>=0.4.6
+
+# 更好的進度追蹤
+# rich>=13.0.0
+
+# ============================================
+# 核心依賴說明
+# ============================================
+# paramiko: SFTP 上傳到 NAS 的核心套件
+#   - 功能: SSH/SFTP 連接
+#   - 用途: 上傳 FASTQ 和 SRA 到群暉 NAS
+#   - 必需: 是
+#
+# tqdm: 進度條顯示
+#   - 功能: 終端進度條
+#   - 用途: 顯示下載/上傳進度
+#   - 必需: 否（但強烈推薦）
+
+# ============================================
+# SRA Toolkit 檢查
+# ============================================
+# 本系統依賴 NCBI SRA Toolkit:
+#   - prefetch: 下載 SRA 檔案
+#   - fasterq-dump: 解壓成 FASTQ
+#   - vdb-config: 配置 NCBI API key
+#
+# 安裝檢查:
+#   prefetch --version
+#   fasterq-dump --version
+#
+# 如未安裝，請參考:
+#   SETUP.bat 會顯示安裝說明
+#   或查看 README.md 的「系統需求」章節
+
+# ============================================
+# 版本兼容性
+# ============================================
+# 測試環境:
+#   - Python: 3.11
+#   - paramiko: 3.4.0
+#   - SRA Toolkit: 3.2.1
+#   - 操作系統: Windows 11
+
+# ============================================
+# 疑難排解
+# ============================================
+# 如果 pip install 失敗:
+#
+# 1. 更新 pip:
+#    python -m pip install --upgrade pip
+#
+# 2. 使用國內鏡像（中國用戶）:
+#    pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+#
+# 3. 檢查 Python 版本:
+#    python --version  # 需 >= 3.8
+#
+# 4. Windows 用戶注意:
+#    - paramiko 需要 Microsoft Visual C++ 14.0+
+#    - 如果報錯，請安裝: https://visualstudio.microsoft.com/downloads/
+#
+# 5. 網路問題:
+#    - 使用 VPN 或代理
+#    - 或手動下載 wheel 檔案安裝
+
+# ============================================
+# 更新依賴
+# ============================================
+# 查看已安裝版本:
+#   pip list
+#
+# 更新所有套件:
+#   pip install -r requirements.txt --upgrade
+#
+# 凍結當前環境:
+#   pip freeze > requirements-frozen.txt

@@ -1,0 +1,3395 @@
+{
+  "completed": [
+    "SRR10810025",
+    "SRR10810029",
+    "SRR12180936",
+    "SRR12180948",
+    "SRR12180954",
+    "SRR12180962",
+    "SRR12180965",
+    "SRR12180968",
+    "SRR12180970",
+    "SRR12180977",
+    "SRR12180981",
+    "SRR12180983",
+    "SRR12180988",
+    "SRR12180990",
+    "SRR12180991",
+    "SRR12180998",
+    "SRR12181002",
+    "SRR12181010",
+    "SRR12181015",
+    "SRR12181016",
+    "SRR12181017",
+    "SRR12181022",
+    "SRR12181026",
+    "SRR12181032",
+    "SRR12181036",
+    "SRR12181041",
+    "SRR12181045",
+    "SRR12181047",
+    "SRR12181048",
+    "SRR12181050",
+    "SRR12181055",
+    "SRR12181059",
+    "SRR13256637",
+    "SRR13256638",
+    "SRR13256639",
+    "SRR13256640",
+    "SRR13256641",
+    "SRR13256642",
+    "SRR13256643",
+    "SRR13256644",
+    "SRR13256645",
+    "SRR13256646",
+    "SRR13256647",
+    "SRR13256648",
+    "SRR13256649",
+    "SRR13256650",
+    "SRR13256651",
+    "SRR13256652",
+    "SRR13256653",
+    "SRR13256654",
+    "SRR13256655",
+    "SRR13256656",
+    "SRR13256657",
+    "SRR13256658",
+    "SRR13256659",
+    "SRR13256660",
+    "SRR13256661",
+    "SRR13256662",
+    "SRR13256663",
+    "SRR13256664",
+    "SRR13256665",
+    "SRR13256666",
+    "SRR13256667",
+    "SRR13256668",
+    "SRR13256669",
+    "SRR13256670",
+    "SRR13256671",
+    "SRR13256672",
+    "SRR13256673",
+    "SRR13256674",
+    "SRR13256675",
+    "SRR13256676",
+    "SRR16972386",
+    "SRR16972387",
+    "SRR16972388",
+    "SRR16972389",
+    "SRR16972390",
+    "SRR16972391",
+    "SRR16972392",
+    "SRR16972393",
+    "SRR16972394",
+    "SRR16972395",
+    "SRR16972396",
+    "SRR16972397",
+    "SRR16972398",
+    "SRR16972399",
+    "SRR16972400",
+    "SRR16972401",
+    "SRR16972402",
+    "SRR16972403",
+    "SRR16972404",
+    "SRR16972405",
+    "SRR16972406",
+    "SRR16972407",
+    "SRR16972408",
+    "SRR16972409",
+    "SRR16972410",
+    "SRR16972411",
+    "SRR16972412",
+    "SRR16972413",
+    "SRR16972414",
+    "SRR16972415",
+    "SRR16972416",
+    "SRR16972417",
+    "SRR16972418",
+    "SRR16972419",
+    "SRR16972420",
+    "SRR16972421",
+    "SRR16972422",
+    "SRR16972423",
+    "SRR16972424",
+    "SRR7986795",
+    "SRR7986798",
+    "SRR7986811"
+  ],
+  "failed": [
+    {
+      "run_id": "SRR10810002",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.433268"
+    },
+    {
+      "run_id": "SRR10810007",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.435253"
+    },
+    {
+      "run_id": "SRR10810005",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.442632"
+    },
+    {
+      "run_id": "SRR10810004",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.442759"
+    },
+    {
+      "run_id": "SRR10810003",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.448938"
+    },
+    {
+      "run_id": "SRR10810006",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.457076"
+    },
+    {
+      "run_id": "SRR10810008",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.465638"
+    },
+    {
+      "run_id": "SRR10810009",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.471263"
+    },
+    {
+      "run_id": "SRR10810010",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.475647"
+    },
+    {
+      "run_id": "SRR10810012",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.477510"
+    },
+    {
+      "run_id": "SRR10810011",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.479776"
+    },
+    {
+      "run_id": "SRR10810013",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.487492"
+    },
+    {
+      "run_id": "SRR10810017",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.496784"
+    },
+    {
+      "run_id": "SRR10810016",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.501350"
+    },
+    {
+      "run_id": "SRR10810014",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.506782"
+    },
+    {
+      "run_id": "SRR10810015",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.511240"
+    },
+    {
+      "run_id": "SRR10810019",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.512140"
+    },
+    {
+      "run_id": "SRR10810018",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.512477"
+    },
+    {
+      "run_id": "SRR10810020",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.521764"
+    },
+    {
+      "run_id": "SRR10810021",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.534547"
+    },
+    {
+      "run_id": "SRR10810023",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.541229"
+    },
+    {
+      "run_id": "SRR10810022",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.541296"
+    },
+    {
+      "run_id": "SRR10810025",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.548027"
+    },
+    {
+      "run_id": "SRR10810024",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.555460"
+    },
+    {
+      "run_id": "SRR10810029",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.564284"
+    },
+    {
+      "run_id": "SRR10810026",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.565669"
+    },
+    {
+      "run_id": "SRR10810028",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.569944"
+    },
+    {
+      "run_id": "SRR10810027",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.575105"
+    },
+    {
+      "run_id": "SRR10810030",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.577646"
+    },
+    {
+      "run_id": "SRR10810031",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.578306"
+    },
+    {
+      "run_id": "SRR10810032",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.595729"
+    },
+    {
+      "run_id": "SRR10810035",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.600947"
+    },
+    {
+      "run_id": "SRR10810033",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.601404"
+    },
+    {
+      "run_id": "SRR10810034",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.608517"
+    },
+    {
+      "run_id": "SRR10810037",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.609812"
+    },
+    {
+      "run_id": "SRR10810036",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.616460"
+    },
+    {
+      "run_id": "SRR10810040",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.623501"
+    },
+    {
+      "run_id": "SRR10810039",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.631573"
+    },
+    {
+      "run_id": "SRR10914154",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.636064"
+    },
+    {
+      "run_id": "SRR10914155",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.640051"
+    },
+    {
+      "run_id": "SRR10810041",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.640105"
+    },
+    {
+      "run_id": "SRR10810038",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.640300"
+    },
+    {
+      "run_id": "SRR10838798",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.641174"
+    },
+    {
+      "run_id": "SRR10914156",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.657810"
+    },
+    {
+      "run_id": "SRR10914157",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.664999"
+    },
+    {
+      "run_id": "SRR10914159",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.671317"
+    },
+    {
+      "run_id": "SRR10914161",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.672858"
+    },
+    {
+      "run_id": "SRR10914160",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.678742"
+    },
+    {
+      "run_id": "SRR10914158",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.683948"
+    },
+    {
+      "run_id": "SRR10914162",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.688834"
+    },
+    {
+      "run_id": "SRR10914164",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.694096"
+    },
+    {
+      "run_id": "SRR10914163",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.700464"
+    },
+    {
+      "run_id": "SRR11267043",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.705896"
+    },
+    {
+      "run_id": "SRR11267042",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.710054"
+    },
+    {
+      "run_id": "SRR10914165",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.712709"
+    },
+    {
+      "run_id": "SRR11267045",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.718849"
+    },
+    {
+      "run_id": "SRR11267044",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.722858"
+    },
+    {
+      "run_id": "SRR11267046",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.728208"
+    },
+    {
+      "run_id": "SRR11267048",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.737774"
+    },
+    {
+      "run_id": "SRR11267049",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.744739"
+    },
+    {
+      "run_id": "SRR11267050",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.744971"
+    },
+    {
+      "run_id": "SRR11267047",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.751334"
+    },
+    {
+      "run_id": "SRR11267051",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.752563"
+    },
+    {
+      "run_id": "SRR11267052",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.760366"
+    },
+    {
+      "run_id": "SRR11267053",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.764208"
+    },
+    {
+      "run_id": "SRR11267054",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.772259"
+    },
+    {
+      "run_id": "SRR11267057",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.778607"
+    },
+    {
+      "run_id": "SRR11267058",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.783379"
+    },
+    {
+      "run_id": "SRR11267059",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.784450"
+    },
+    {
+      "run_id": "SRR11267056",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.790592"
+    },
+    {
+      "run_id": "SRR11267060",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.794223"
+    },
+    {
+      "run_id": "SRR11267055",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.800257"
+    },
+    {
+      "run_id": "SRR11267061",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.804756"
+    },
+    {
+      "run_id": "SRR11267062",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.809197"
+    },
+    {
+      "run_id": "SRR11267064",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.812537"
+    },
+    {
+      "run_id": "SRR11267063",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.816573"
+    },
+    {
+      "run_id": "SRR11267065",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.818982"
+    },
+    {
+      "run_id": "SRR11267066",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.823677"
+    },
+    {
+      "run_id": "SRR11267067",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.828691"
+    },
+    {
+      "run_id": "SRR11267068",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.833660"
+    },
+    {
+      "run_id": "SRR11267069",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.839740"
+    },
+    {
+      "run_id": "SRR11267070",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.844358"
+    },
+    {
+      "run_id": "SRR11267071",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.846387"
+    },
+    {
+      "run_id": "SRR11267073",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.852523"
+    },
+    {
+      "run_id": "SRR11267072",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.856014"
+    },
+    {
+      "run_id": "SRR11267074",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.861433"
+    },
+    {
+      "run_id": "SRR11267076",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.867213"
+    },
+    {
+      "run_id": "SRR11267077",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.871577"
+    },
+    {
+      "run_id": "SRR11267079",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.876623"
+    },
+    {
+      "run_id": "SRR11267075",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.877739"
+    },
+    {
+      "run_id": "SRR11267080",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.878783"
+    },
+    {
+      "run_id": "SRR11267078",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.887436"
+    },
+    {
+      "run_id": "SRR11267081",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.894672"
+    },
+    {
+      "run_id": "SRR12097444",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.900678"
+    },
+    {
+      "run_id": "SRR12097447",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.904663"
+    },
+    {
+      "run_id": "SRR12097446",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.909206"
+    },
+    {
+      "run_id": "SRR12097445",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.910217"
+    },
+    {
+      "run_id": "SRR12180936",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.916519"
+    },
+    {
+      "run_id": "SRR12180937",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.921137"
+    },
+    {
+      "run_id": "SRR12180940",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.929197"
+    },
+    {
+      "run_id": "SRR12180939",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.930970"
+    },
+    {
+      "run_id": "SRR12180941",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.931121"
+    },
+    {
+      "run_id": "SRR12180942",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.942368"
+    },
+    {
+      "run_id": "SRR12180944",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.953796"
+    },
+    {
+      "run_id": "SRR12180945",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.954422"
+    },
+    {
+      "run_id": "SRR12180943",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.955794"
+    },
+    {
+      "run_id": "SRR12180946",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.967353"
+    },
+    {
+      "run_id": "SRR12180935",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.967427"
+    },
+    {
+      "run_id": "SRR12180948",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.978981"
+    },
+    {
+      "run_id": "SRR12180949",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.979049"
+    },
+    {
+      "run_id": "SRR12180950",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.985025"
+    },
+    {
+      "run_id": "SRR12180951",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.985924"
+    },
+    {
+      "run_id": "SRR12180938",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:08.995163"
+    },
+    {
+      "run_id": "SRR12180947",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.001851"
+    },
+    {
+      "run_id": "SRR12180954",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.007850"
+    },
+    {
+      "run_id": "SRR12180955",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.013463"
+    },
+    {
+      "run_id": "SRR12180952",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.014322"
+    },
+    {
+      "run_id": "SRR12180953",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.021791"
+    },
+    {
+      "run_id": "SRR12180956",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.021918"
+    },
+    {
+      "run_id": "SRR12180957",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.030191"
+    },
+    {
+      "run_id": "SRR12180958",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.033819"
+    },
+    {
+      "run_id": "SRR12180959",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.041709"
+    },
+    {
+      "run_id": "SRR12180960",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.049605"
+    },
+    {
+      "run_id": "SRR12180962",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.056004"
+    },
+    {
+      "run_id": "SRR12180961",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.061656"
+    },
+    {
+      "run_id": "SRR12180965",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.063007"
+    },
+    {
+      "run_id": "SRR12180964",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.064108"
+    },
+    {
+      "run_id": "SRR12180966",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.074200"
+    },
+    {
+      "run_id": "SRR12180967",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.083612"
+    },
+    {
+      "run_id": "SRR12180968",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.084237"
+    },
+    {
+      "run_id": "SRR12180969",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.084759"
+    },
+    {
+      "run_id": "SRR12180970",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.095735"
+    },
+    {
+      "run_id": "SRR12180971",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.095959"
+    },
+    {
+      "run_id": "SRR12180974",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.107075"
+    },
+    {
+      "run_id": "SRR12180973",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.109593"
+    },
+    {
+      "run_id": "SRR12180963",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.115231"
+    },
+    {
+      "run_id": "SRR12180972",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.119087"
+    },
+    {
+      "run_id": "SRR12180975",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.122886"
+    },
+    {
+      "run_id": "SRR12180976",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.123614"
+    },
+    {
+      "run_id": "SRR12180977",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.132643"
+    },
+    {
+      "run_id": "SRR12180978",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.141579"
+    },
+    {
+      "run_id": "SRR12180982",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.146293"
+    },
+    {
+      "run_id": "SRR12180979",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.150627"
+    },
+    {
+      "run_id": "SRR12180981",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.152192"
+    },
+    {
+      "run_id": "SRR12180980",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.153765"
+    },
+    {
+      "run_id": "SRR12180983",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.157738"
+    },
+    {
+      "run_id": "SRR12180984",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.165940"
+    },
+    {
+      "run_id": "SRR12180987",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.172643"
+    },
+    {
+      "run_id": "SRR12180985",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.180371"
+    },
+    {
+      "run_id": "SRR12180989",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.181580"
+    },
+    {
+      "run_id": "SRR12180986",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.184273"
+    },
+    {
+      "run_id": "SRR12180990",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.190462"
+    },
+    {
+      "run_id": "SRR12180988",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.195136"
+    },
+    {
+      "run_id": "SRR12180991",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.198554"
+    },
+    {
+      "run_id": "SRR12180994",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.204824"
+    },
+    {
+      "run_id": "SRR12180993",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.204924"
+    },
+    {
+      "run_id": "SRR12180992",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.208618"
+    },
+    {
+      "run_id": "SRR12180995",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.214919"
+    },
+    {
+      "run_id": "SRR12180997",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.219656"
+    },
+    {
+      "run_id": "SRR12180998",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.229224"
+    },
+    {
+      "run_id": "SRR12181000",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.235348"
+    },
+    {
+      "run_id": "SRR12181001",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.236078"
+    },
+    {
+      "run_id": "SRR12181002",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.236272"
+    },
+    {
+      "run_id": "SRR12180999",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.237399"
+    },
+    {
+      "run_id": "SRR12180996",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.253824"
+    },
+    {
+      "run_id": "SRR12181003",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.256129"
+    },
+    {
+      "run_id": "SRR12181004",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.279926"
+    },
+    {
+      "run_id": "SRR12181005",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.281209"
+    },
+    {
+      "run_id": "SRR12181007",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.289160"
+    },
+    {
+      "run_id": "SRR12181009",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.290138"
+    },
+    {
+      "run_id": "SRR12181006",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.290500"
+    },
+    {
+      "run_id": "SRR12181008",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.302082"
+    },
+    {
+      "run_id": "SRR12181010",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.316347"
+    },
+    {
+      "run_id": "SRR12181015",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.320241"
+    },
+    {
+      "run_id": "SRR12181011",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.323049"
+    },
+    {
+      "run_id": "SRR12181013",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.323707"
+    },
+    {
+      "run_id": "SRR12181012",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.329389"
+    },
+    {
+      "run_id": "SRR12181014",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.335527"
+    },
+    {
+      "run_id": "SRR12181016",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.339935"
+    },
+    {
+      "run_id": "SRR12181018",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.344215"
+    },
+    {
+      "run_id": "SRR12181020",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.348298"
+    },
+    {
+      "run_id": "SRR12181019",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.349491"
+    },
+    {
+      "run_id": "SRR12181017",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.355687"
+    },
+    {
+      "run_id": "SRR12181021",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.359206"
+    },
+    {
+      "run_id": "SRR12181022",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.359819"
+    },
+    {
+      "run_id": "SRR12181023",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.366468"
+    },
+    {
+      "run_id": "SRR12181024",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.375357"
+    },
+    {
+      "run_id": "SRR12181026",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.379124"
+    },
+    {
+      "run_id": "SRR12181027",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.379558"
+    },
+    {
+      "run_id": "SRR12181028",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.386262"
+    },
+    {
+      "run_id": "SRR12181029",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.389844"
+    },
+    {
+      "run_id": "SRR12181025",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.393589"
+    },
+    {
+      "run_id": "SRR12181030",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.397194"
+    },
+    {
+      "run_id": "SRR12181032",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.403321"
+    },
+    {
+      "run_id": "SRR12181033",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.405841"
+    },
+    {
+      "run_id": "SRR12181031",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.408687"
+    },
+    {
+      "run_id": "SRR12181036",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.417608"
+    },
+    {
+      "run_id": "SRR12181034",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.417767"
+    },
+    {
+      "run_id": "SRR12181035",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.424855"
+    },
+    {
+      "run_id": "SRR12181037",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.431434"
+    },
+    {
+      "run_id": "SRR12181038",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.440441"
+    },
+    {
+      "run_id": "SRR12181041",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.440785"
+    },
+    {
+      "run_id": "SRR12181042",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.448482"
+    },
+    {
+      "run_id": "SRR12181040",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.450194"
+    },
+    {
+      "run_id": "SRR12181043",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.454733"
+    },
+    {
+      "run_id": "SRR12181039",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.458895"
+    },
+    {
+      "run_id": "SRR12181045",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.463873"
+    },
+    {
+      "run_id": "SRR12181046",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.468148"
+    },
+    {
+      "run_id": "SRR12181044",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.471846"
+    },
+    {
+      "run_id": "SRR12181049",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.477200"
+    },
+    {
+      "run_id": "SRR12181048",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.477769"
+    },
+    {
+      "run_id": "SRR12181047",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.483786"
+    },
+    {
+      "run_id": "SRR12181050",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.484837"
+    },
+    {
+      "run_id": "SRR12181051",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.491317"
+    },
+    {
+      "run_id": "SRR12181052",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.496456"
+    },
+    {
+      "run_id": "SRR12181056",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.503362"
+    },
+    {
+      "run_id": "SRR12181053",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.507012"
+    },
+    {
+      "run_id": "SRR12181057",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.509166"
+    },
+    {
+      "run_id": "SRR12181055",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.512828"
+    },
+    {
+      "run_id": "SRR12181058",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.515966"
+    },
+    {
+      "run_id": "SRR13256638",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.530046"
+    },
+    {
+      "run_id": "SRR12181059",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.530455"
+    },
+    {
+      "run_id": "SRR13256637",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.531335"
+    },
+    {
+      "run_id": "SRR13256640",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.536663"
+    },
+    {
+      "run_id": "SRR13256639",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.543400"
+    },
+    {
+      "run_id": "SRR13256641",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.553041"
+    },
+    {
+      "run_id": "SRR13256643",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.556197"
+    },
+    {
+      "run_id": "SRR12181054",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.561431"
+    },
+    {
+      "run_id": "SRR13256644",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.565643"
+    },
+    {
+      "run_id": "SRR13256645",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.565745"
+    },
+    {
+      "run_id": "SRR13256642",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.573575"
+    },
+    {
+      "run_id": "SRR13256646",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.576551"
+    },
+    {
+      "run_id": "SRR13256647",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.580497"
+    },
+    {
+      "run_id": "SRR13256649",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.584624"
+    },
+    {
+      "run_id": "SRR13256648",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.589154"
+    },
+    {
+      "run_id": "SRR13256650",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.590896"
+    },
+    {
+      "run_id": "SRR13256651",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.597108"
+    },
+    {
+      "run_id": "SRR13256653",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.601139"
+    },
+    {
+      "run_id": "SRR13256652",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.604572"
+    },
+    {
+      "run_id": "SRR13256654",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.609383"
+    },
+    {
+      "run_id": "SRR13256655",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.613849"
+    },
+    {
+      "run_id": "SRR13256656",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.613968"
+    },
+    {
+      "run_id": "SRR13256657",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.621685"
+    },
+    {
+      "run_id": "SRR13256659",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.625496"
+    },
+    {
+      "run_id": "SRR13256658",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.625667"
+    },
+    {
+      "run_id": "SRR13256662",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.634938"
+    },
+    {
+      "run_id": "SRR13256660",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.636656"
+    },
+    {
+      "run_id": "SRR13256664",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.643507"
+    },
+    {
+      "run_id": "SRR13256663",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.647134"
+    },
+    {
+      "run_id": "SRR13256665",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.650642"
+    },
+    {
+      "run_id": "SRR13256661",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.651768"
+    },
+    {
+      "run_id": "SRR13256667",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.658940"
+    },
+    {
+      "run_id": "SRR13256666",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.662340"
+    },
+    {
+      "run_id": "SRR13256668",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.668699"
+    },
+    {
+      "run_id": "SRR13256670",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.673097"
+    },
+    {
+      "run_id": "SRR13256672",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.677995"
+    },
+    {
+      "run_id": "SRR13256669",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.678778"
+    },
+    {
+      "run_id": "SRR13256673",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.686744"
+    },
+    {
+      "run_id": "SRR13256671",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.688144"
+    },
+    {
+      "run_id": "SRR13256675",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.694266"
+    },
+    {
+      "run_id": "SRR13256674",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.708046"
+    },
+    {
+      "run_id": "SRR13256676",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.712454"
+    },
+    {
+      "run_id": "SRR16972388",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.713352"
+    },
+    {
+      "run_id": "SRR16972387",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.715796"
+    },
+    {
+      "run_id": "SRR16972389",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.723926"
+    },
+    {
+      "run_id": "SRR16972386",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.729440"
+    },
+    {
+      "run_id": "SRR16972391",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.737808"
+    },
+    {
+      "run_id": "SRR16972390",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.740056"
+    },
+    {
+      "run_id": "SRR16972392",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.740130"
+    },
+    {
+      "run_id": "SRR16972394",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.749815"
+    },
+    {
+      "run_id": "SRR16972393",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.751533"
+    },
+    {
+      "run_id": "SRR16972395",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.751582"
+    },
+    {
+      "run_id": "SRR16972397",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.763077"
+    },
+    {
+      "run_id": "SRR16972396",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.766255"
+    },
+    {
+      "run_id": "SRR16972398",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.770426"
+    },
+    {
+      "run_id": "SRR16972399",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.774790"
+    },
+    {
+      "run_id": "SRR16972400",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.781415"
+    },
+    {
+      "run_id": "SRR16972401",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.789551"
+    },
+    {
+      "run_id": "SRR16972402",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.793457"
+    },
+    {
+      "run_id": "SRR16972403",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.795020"
+    },
+    {
+      "run_id": "SRR16972405",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.800215"
+    },
+    {
+      "run_id": "SRR16972404",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.805270"
+    },
+    {
+      "run_id": "SRR16972406",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.806378"
+    },
+    {
+      "run_id": "SRR16972408",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.814699"
+    },
+    {
+      "run_id": "SRR16972407",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.815443"
+    },
+    {
+      "run_id": "SRR16972410",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.821370"
+    },
+    {
+      "run_id": "SRR16972411",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.825797"
+    },
+    {
+      "run_id": "SRR16972412",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.829886"
+    },
+    {
+      "run_id": "SRR16972409",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.832181"
+    },
+    {
+      "run_id": "SRR16972413",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.836864"
+    },
+    {
+      "run_id": "SRR16972415",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.843407"
+    },
+    {
+      "run_id": "SRR16972414",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.849071"
+    },
+    {
+      "run_id": "SRR16972416",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.854205"
+    },
+    {
+      "run_id": "SRR16972419",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.854581"
+    },
+    {
+      "run_id": "SRR16972417",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.861075"
+    },
+    {
+      "run_id": "SRR16972418",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.861891"
+    },
+    {
+      "run_id": "SRR16972420",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.868417"
+    },
+    {
+      "run_id": "SRR16972421",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.873049"
+    },
+    {
+      "run_id": "SRR16972423",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.881359"
+    },
+    {
+      "run_id": "SRR16972424",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.884430"
+    },
+    {
+      "run_id": "SRR16972422",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.891973"
+    },
+    {
+      "run_id": "SRR17134009",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.892439"
+    },
+    {
+      "run_id": "SRR17134011",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.892860"
+    },
+    {
+      "run_id": "SRR17134010",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.901793"
+    },
+    {
+      "run_id": "SRR17134012",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.905617"
+    },
+    {
+      "run_id": "SRR17134013",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.910284"
+    },
+    {
+      "run_id": "SRR17188270",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.921563"
+    },
+    {
+      "run_id": "SRR17134014",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.925459"
+    },
+    {
+      "run_id": "SRR17188269",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.926539"
+    },
+    {
+      "run_id": "SRR17188272",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.932612"
+    },
+    {
+      "run_id": "SRR17188273",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.933283"
+    },
+    {
+      "run_id": "SRR17188274",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.940860"
+    },
+    {
+      "run_id": "SRR17188271",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.941437"
+    },
+    {
+      "run_id": "SRR17188275",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.950937"
+    },
+    {
+      "run_id": "SRR17188278",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.956061"
+    },
+    {
+      "run_id": "SRR17188277",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.960395"
+    },
+    {
+      "run_id": "SRR17188276",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.965215"
+    },
+    {
+      "run_id": "SRR17188280",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.968275"
+    },
+    {
+      "run_id": "SRR17188279",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.977026"
+    },
+    {
+      "run_id": "SRR17188282",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.981244"
+    },
+    {
+      "run_id": "SRR17188281",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.985440"
+    },
+    {
+      "run_id": "SRR17188283",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.990088"
+    },
+    {
+      "run_id": "SRR17188285",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.993920"
+    },
+    {
+      "run_id": "SRR17188284",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:09.993979"
+    },
+    {
+      "run_id": "SRR17188286",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.001560"
+    },
+    {
+      "run_id": "SRR17188288",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.011129"
+    },
+    {
+      "run_id": "SRR17188291",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.017086"
+    },
+    {
+      "run_id": "SRR17188287",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.020894"
+    },
+    {
+      "run_id": "SRR17188289",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.021021"
+    },
+    {
+      "run_id": "SRR17188292",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.029023"
+    },
+    {
+      "run_id": "SRR17188290",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.030791"
+    },
+    {
+      "run_id": "SRR17188293",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.044949"
+    },
+    {
+      "run_id": "SRR17188295",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.045308"
+    },
+    {
+      "run_id": "SRR17188296",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.047081"
+    },
+    {
+      "run_id": "SRR17188294",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.047387"
+    },
+    {
+      "run_id": "SRR17188297",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.069181"
+    },
+    {
+      "run_id": "SRR18079817",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.074462"
+    },
+    {
+      "run_id": "SRR17188300",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.076095"
+    },
+    {
+      "run_id": "SRR17188299",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.081516"
+    },
+    {
+      "run_id": "SRR18079818",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.085220"
+    },
+    {
+      "run_id": "SRR17188298",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.085350"
+    },
+    {
+      "run_id": "SRR18079819",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.094810"
+    },
+    {
+      "run_id": "SRR18079820",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.104288"
+    },
+    {
+      "run_id": "SRR18079823",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.108066"
+    },
+    {
+      "run_id": "SRR18079824",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.109348"
+    },
+    {
+      "run_id": "SRR18079821",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.111038"
+    },
+    {
+      "run_id": "SRR18079822",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.112881"
+    },
+    {
+      "run_id": "SRR18079825",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.123802"
+    },
+    {
+      "run_id": "SRR18079826",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.132835"
+    },
+    {
+      "run_id": "SRR18079829",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.137245"
+    },
+    {
+      "run_id": "SRR18079827",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.137631"
+    },
+    {
+      "run_id": "SRR18079830",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.143139"
+    },
+    {
+      "run_id": "SRR18079828",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.147206"
+    },
+    {
+      "run_id": "SRR5237156",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.148233"
+    },
+    {
+      "run_id": "SRR5990911",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.166555"
+    },
+    {
+      "run_id": "SRR5990912",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.166809"
+    },
+    {
+      "run_id": "SRR5990913",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.170269"
+    },
+    {
+      "run_id": "SRR5990914",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.170346"
+    },
+    {
+      "run_id": "SRR5990910",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.178823"
+    },
+    {
+      "run_id": "SRR5990915",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.182195"
+    },
+    {
+      "run_id": "SRR5990916",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.193492"
+    },
+    {
+      "run_id": "SRR5990918",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.199037"
+    },
+    {
+      "run_id": "SRR5990917",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.199171"
+    },
+    {
+      "run_id": "SRR5990919",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.203621"
+    },
+    {
+      "run_id": "SRR5990920",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.208985"
+    },
+    {
+      "run_id": "SRR5990921",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.210264"
+    },
+    {
+      "run_id": "SRR6033660",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.218236"
+    },
+    {
+      "run_id": "SRR6033693",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.226985"
+    },
+    {
+      "run_id": "SRR7287194",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.231593"
+    },
+    {
+      "run_id": "SRR6033662",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.234927"
+    },
+    {
+      "run_id": "SRR6033691",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.238555"
+    },
+    {
+      "run_id": "SRR7287196",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.244198"
+    },
+    {
+      "run_id": "SRR7287195",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.245233"
+    },
+    {
+      "run_id": "SRR7287197",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.251990"
+    },
+    {
+      "run_id": "SRR7287198",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.253594"
+    },
+    {
+      "run_id": "SRR7287199",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.258639"
+    },
+    {
+      "run_id": "SRR7287200",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.262676"
+    },
+    {
+      "run_id": "SRR7287201",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.267630"
+    },
+    {
+      "run_id": "SRR7287202",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.273617"
+    },
+    {
+      "run_id": "SRR7287204",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.279215"
+    },
+    {
+      "run_id": "SRR7287205",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.279962"
+    },
+    {
+      "run_id": "SRR7287203",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.285675"
+    },
+    {
+      "run_id": "SRR7287207",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.292140"
+    },
+    {
+      "run_id": "SRR7287206",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.292768"
+    },
+    {
+      "run_id": "SRR7287208",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.299641"
+    },
+    {
+      "run_id": "SRR7287209",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.303955"
+    },
+    {
+      "run_id": "SRR7287210",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.304024"
+    },
+    {
+      "run_id": "SRR7287211",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.304391"
+    },
+    {
+      "run_id": "SRR7287213",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.314612"
+    },
+    {
+      "run_id": "SRR7287212",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.317453"
+    },
+    {
+      "run_id": "SRR7287214",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.324413"
+    },
+    {
+      "run_id": "SRR7287215",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.324496"
+    },
+    {
+      "run_id": "SRR7287216",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.331438"
+    },
+    {
+      "run_id": "SRR7287218",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.335269"
+    },
+    {
+      "run_id": "SRR7287217",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.338685"
+    },
+    {
+      "run_id": "SRR7287219",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.342151"
+    },
+    {
+      "run_id": "SRR7287221",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.349296"
+    },
+    {
+      "run_id": "SRR7287220",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.349438"
+    },
+    {
+      "run_id": "SRR7287224",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.357363"
+    },
+    {
+      "run_id": "SRR7287222",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.360970"
+    },
+    {
+      "run_id": "SRR7287223",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.365753"
+    },
+    {
+      "run_id": "SRR7287225",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.365873"
+    },
+    {
+      "run_id": "SRR7287226",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.368871"
+    },
+    {
+      "run_id": "SRR7287227",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.377666"
+    },
+    {
+      "run_id": "SRR7287229",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.379332"
+    },
+    {
+      "run_id": "SRR7287228",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.385166"
+    },
+    {
+      "run_id": "SRR7287231",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.390353"
+    },
+    {
+      "run_id": "SRR7287232",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.390765"
+    },
+    {
+      "run_id": "SRR7287234",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.398695"
+    },
+    {
+      "run_id": "SRR7287233",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.400090"
+    },
+    {
+      "run_id": "SRR7287235",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.406140"
+    },
+    {
+      "run_id": "SRR7287230",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.409077"
+    },
+    {
+      "run_id": "SRR7287236",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.413279"
+    },
+    {
+      "run_id": "SRR7287237",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.417672"
+    },
+    {
+      "run_id": "SRR7287239",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.424361"
+    },
+    {
+      "run_id": "SRR7287238",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.424510"
+    },
+    {
+      "run_id": "SRR7287241",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.432600"
+    },
+    {
+      "run_id": "SRR7287242",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.434959"
+    },
+    {
+      "run_id": "SRR7287240",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.436519"
+    },
+    {
+      "run_id": "SRR7287244",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.443575"
+    },
+    {
+      "run_id": "SRR7287243",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.447254"
+    },
+    {
+      "run_id": "SRR7287245",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.452726"
+    },
+    {
+      "run_id": "SRR7986789",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.458906"
+    },
+    {
+      "run_id": "SRR7287247",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.462870"
+    },
+    {
+      "run_id": "SRR7287246",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.466745"
+    },
+    {
+      "run_id": "SRR7986792",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.470449"
+    },
+    {
+      "run_id": "SRR7986790",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.471218"
+    },
+    {
+      "run_id": "SRR7986791",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.477401"
+    },
+    {
+      "run_id": "SRR7986794",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.485986"
+    },
+    {
+      "run_id": "SRR7986793",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.489930"
+    },
+    {
+      "run_id": "SRR7986795",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.492566"
+    },
+    {
+      "run_id": "SRR7986797",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.501672"
+    },
+    {
+      "run_id": "SRR7986798",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.504052"
+    },
+    {
+      "run_id": "SRR7986796",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.513940"
+    },
+    {
+      "run_id": "SRR7986799",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.520434"
+    },
+    {
+      "run_id": "SRR7986801",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.528109"
+    },
+    {
+      "run_id": "SRR7986800",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.528292"
+    },
+    {
+      "run_id": "SRR7986802",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.528767"
+    },
+    {
+      "run_id": "SRR7986803",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.538548"
+    },
+    {
+      "run_id": "SRR7986805",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.554571"
+    },
+    {
+      "run_id": "SRR7986804",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.558456"
+    },
+    {
+      "run_id": "SRR7986808",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.573366"
+    },
+    {
+      "run_id": "SRR7986806",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.573580"
+    },
+    {
+      "run_id": "SRR7986810",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.579720"
+    },
+    {
+      "run_id": "SRR7986809",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.581901"
+    },
+    {
+      "run_id": "SRR7986807",
+      "step": "download_process",
+      "error": "[WinError 2] 系統找不到指定的檔案。",
+      "time": "2025-10-21T13:16:10.585687"
+    },
+    {
+      "run_id": "ERR2696421",
+      "step": "download_process",
+      "error": "Prefetch失敗: ",
+      "time": "2025-10-21T21:51:59.484640"
+    },
+    {
+      "run_id": "DRR019499",
+      "step": "download_process",
+      "error": "Prefetch失敗: ",
+      "time": "2025-10-21T21:51:59.492484"
+    },
+    {
+      "run_id": "ERR2696424",
+      "step": "download_process",
+      "error": "Prefetch失敗: ",
+      "time": "2025-10-21T21:51:59.493596"
+    },
+    {
+      "run_id": "ERR2696423",
+      "step": "download_process",
+      "error": "Prefetch失敗: ",
+      "time": "2025-10-21T21:51:59.494872"
+    },
+    {
+      "run_id": "ERR2696422",
+      "step": "download_process",
+      "error": "Prefetch失敗: ",
+      "time": "2025-10-21T21:51:59.524231"
+    },
+    {
+      "run_id": "ERR2031964",
+      "step": "download_process",
+      "error": "Prefetch失敗: ",
+      "time": "2025-10-21T21:51:59.731667"
+    },
+    {
+      "run_id": "ERR317241-ERR317421-ERR317433",
+      "step": "download_process",
+      "error": "Prefetch失敗: 2025-10-21T13:52:01 prefetch.3.2.1 err: name not found while resolving query within virtual file system module - failed to resolve accession 'ERR317241-ERR317421-ERR317433' - no data ( 404 ); ncbi_phid='1D33041B249B5A3500007FCFD6CB9F78.1.m_2'\n",
+      "time": "2025-10-21T21:52:01.661449"
+    },
+    {
+      "run_id": "ERR317255, ERR317459, ERR317471",
+      "step": "download_process",
+      "error": "Prefetch失敗: 2025-10-21T13:52:01 prefetch.3.2.1 int: item not found while executing query within virtual file system module - cannot resolve remote location of 'ERR317255, ERR317459, ERR317471'\n",
+      "time": "2025-10-21T21:52:01.891851"
+    },
+    {
+      "run_id": "ERR317256, ERR317460, ERR317472",
+      "step": "download_process",
+      "error": "Prefetch失敗: 2025-10-21T13:52:03 prefetch.3.2.1 int: item not found while executing query within virtual file system module - cannot resolve remote location of 'ERR317256, ERR317460, ERR317472'\n",
+      "time": "2025-10-21T21:52:03.825732"
+    },
+    {
+      "run_id": "ERR2696425",
+      "step": "download_process",
+      "error": "Prefetch失敗: ",
+      "time": "2025-10-21T21:52:03.829038"
+    },
+    {
+      "run_id": "ERR2696428",
+      "step": "download_process",
+      "error": "Prefetch失敗: ",
+      "time": "2025-10-21T21:52:03.844282"
+    },
+    {
+      "run_id": "ERR2696426",
+      "step": "download_process",
+      "error": "Prefetch失敗: ",
+      "time": "2025-10-21T21:52:03.852060"
+    },
+    {
+      "run_id": "ERR2696427",
+      "step": "download_process",
+      "error": "Prefetch失敗: ",
+      "time": "2025-10-21T21:52:03.908702"
+    },
+    {
+      "run_id": "ERR317261, ERR317465, ERR317477",
+      "step": "download_process",
+      "error": "Prefetch失敗: 2025-10-21T13:52:04 prefetch.3.2.1 int: item not found while executing query within virtual file system module - cannot resolve remote location of 'ERR317261, ERR317465, ERR317477'\n",
+      "time": "2025-10-21T21:52:04.079736"
+    },
+    {
+      "run_id": "ERR317264, ERR317468, ERR317480",
+      "step": "download_process",
+      "error": "Prefetch失敗: 2025-10-21T13:52:05 prefetch.3.2.1 int: item not found while executing query within virtual file system module - cannot resolve remote location of 'ERR317264, ERR317468, ERR317480'\n",
+      "time": "2025-10-21T21:52:06.007133"
+    },
+    {
+      "run_id": "ERR317274, ERR320201, ERR320213",
+      "step": "download_process",
+      "error": "Prefetch失敗: 2025-10-21T13:52:06 prefetch.3.2.1 int: item not found while executing query within virtual file system module - cannot resolve remote location of 'ERR317274, ERR320201, ERR320213'\n",
+      "time": "2025-10-21T21:52:06.029514"
+    },
+    {
+      "run_id": "ERR317272, ERR320199, ERR320211",
+      "step": "download_process",
+      "error": "Prefetch失敗: 2025-10-21T13:52:06 prefetch.3.2.1 int: item not found while executing query within virtual file system module - cannot resolve remote location of 'ERR317272, ERR320199, ERR320211'\n",
+      "time": "2025-10-21T21:52:06.043591"
+    },
+    {
+      "run_id": "ERR317281, ERR320220, ERR320232",
+      "step": "download_process",
+      "error": "Prefetch失敗: 2025-10-21T13:52:06 prefetch.3.2.1 int: item not found while executing query within virtual file system module - cannot resolve remote location of 'ERR317281, ERR320220, ERR320232'\n",
+      "time": "2025-10-21T21:52:06.044761"
+    },
+    {
+      "run_id": "ERR317275, ERR320202, ERR320214",
+      "step": "download_process",
+      "error": "Prefetch失敗: 2025-10-21T13:52:06 prefetch.3.2.1 int: item not found while executing query within virtual file system module - cannot resolve remote location of 'ERR317275, ERR320202, ERR320214'\n",
+      "time": "2025-10-21T21:52:06.061569"
+    },
+    {
+      "run_id": "ERR317283, ERR320222, ERR320234",
+      "step": "download_process",
+      "error": "Prefetch失敗: 2025-10-21T13:52:06 prefetch.3.2.1 int: item not found while executing query within virtual file system module - cannot resolve remote location of 'ERR317283, ERR320222, ERR320234'\n",
+      "time": "2025-10-21T21:52:06.225330"
+    },
+    {
+      "run_id": "ERR317284, ERR320223, ERR320235",
+      "step": "download_process",
+      "error": "Prefetch失敗: 2025-10-21T13:52:08 prefetch.3.2.1 int: item not found while executing query within virtual file system module - cannot resolve remote location of 'ERR317284, ERR320223, ERR320235'\n",
+      "time": "2025-10-21T21:52:08.189451"
+    },
+    {
+      "run_id": "ERR317288, ERR320227, ERR320239",
+      "step": "download_process",
+      "error": "Prefetch失敗: 2025-10-21T13:52:08 prefetch.3.2.1 int: item not found while executing query within virtual file system module - cannot resolve remote location of 'ERR317288, ERR320227, ERR320239'\n",
+      "time": "2025-10-21T21:52:08.215763"
+    },
+    {
+      "run_id": "ERR317297, ERR340905, ERR340917",
+      "step": "download_process",
+      "error": "Prefetch失敗: 2025-10-21T13:52:08 prefetch.3.2.1 int: item not found while executing query within virtual file system module - cannot resolve remote location of 'ERR317297, ERR340905, ERR340917'\n",
+      "time": "2025-10-21T21:52:08.230525"
+    },
+    {
+      "run_id": "ERR317289, ERR320228, ERR320240",
+      "step": "download_process",
+      "error": "Prefetch失敗: 2025-10-21T13:52:08 prefetch.3.2.1 int: item not found while executing query within virtual file system module - cannot resolve remote location of 'ERR317289, ERR320228, ERR320240'\n",
+      "time": "2025-10-21T21:52:08.237291"
+    },
+    {
+      "run_id": "ERR317296, ERR340904, ERR340916",
+      "step": "download_process",
+      "error": "Prefetch失敗: 2025-10-21T13:52:08 prefetch.3.2.1 int: item not found while executing query within virtual file system module - cannot resolve remote location of 'ERR317296, ERR340904, ERR340916'\n",
+      "time": "2025-10-21T21:52:08.276359"
+    },
+    {
+      "run_id": "ERR317302, ERR323407, ERR323419",
+      "step": "download_process",
+      "error": "Prefetch失敗: 2025-10-21T13:52:08 prefetch.3.2.1 int: item not found while executing query within virtual file system module - cannot resolve remote location of 'ERR317302, ERR323407, ERR323419'\n",
+      "time": "2025-10-21T21:52:08.366449"
+    },
+    {
+      "run_id": "ERR317303, ERR323408, ERR323420",
+      "step": "download_process",
+      "error": "Prefetch失敗: 2025-10-21T13:52:10 prefetch.3.2.1 int: item not found while executing query within virtual file system module - cannot resolve remote location of 'ERR317303, ERR323408, ERR323420'\n",
+      "time": "2025-10-21T21:52:10.354572"
+    },
+    {
+      "run_id": "ERR317304, ERR323409, ERR323421",
+      "step": "download_process",
+      "error": "Prefetch失敗: 2025-10-21T13:52:10 prefetch.3.2.1 int: item not found while executing query within virtual file system module - cannot resolve remote location of 'ERR317304, ERR323409, ERR323421'\n",
+      "time": "2025-10-21T21:52:10.367227"
+    },
+    {
+      "run_id": "ERR317311, ERR323416, ERR323428",
+      "step": "download_process",
+      "error": "Prefetch失敗: 2025-10-21T13:52:10 prefetch.3.2.1 int: item not found while executing query within virtual file system module - cannot resolve remote location of 'ERR317311, ERR323416, ERR323428'\n",
+      "time": "2025-10-21T21:52:10.395410"
+    },
+    {
+      "run_id": "ERR317309, ERR323414, ERR323426",
+      "step": "download_process",
+      "error": "Prefetch失敗: 2025-10-21T13:52:10 prefetch.3.2.1 int: item not found while executing query within virtual file system module - cannot resolve remote location of 'ERR317309, ERR323414, ERR323426'\n",
+      "time": "2025-10-21T21:52:10.403833"
+    },
+    {
+      "run_id": "ERR317306, ERR323411, ERR323423",
+      "step": "download_process",
+      "error": "Prefetch失敗: 2025-10-21T13:52:10 prefetch.3.2.1 int: item not found while executing query within virtual file system module - cannot resolve remote location of 'ERR317306, ERR323411, ERR323423'\n",
+      "time": "2025-10-21T21:52:10.406271"
+    },
+    {
+      "run_id": "ERR317312, ERR323417, ERR323429",
+      "step": "download_process",
+      "error": "Prefetch失敗: 2025-10-21T13:52:10 prefetch.3.2.1 int: item not found while executing query within virtual file system module - cannot resolve remote location of 'ERR317312, ERR323417, ERR323429'\n",
+      "time": "2025-10-21T21:52:10.511966"
+    },
+    {
+      "run_id": "ERR317314, ERR323431, ERR323443",
+      "step": "download_process",
+      "error": "Prefetch失敗: 2025-10-21T13:52:12 prefetch.3.2.1 int: item not found while executing query within virtual file system module - cannot resolve remote location of 'ERR317314, ERR323431, ERR323443'\n",
+      "time": "2025-10-21T21:52:12.518234"
+    },
+    {
+      "run_id": "ERR317317, ERR323434, ERR323446",
+      "step": "download_process",
+      "error": "Prefetch失敗: 2025-10-21T13:52:12 prefetch.3.2.1 int: item not found while executing query within virtual file system module - cannot resolve remote location of 'ERR317317, ERR323434, ERR323446'\n",
+      "time": "2025-10-21T21:52:12.552530"
+    },
+    {
+      "run_id": "ERR317316, ERR323433, ERR323445",
+      "step": "download_process",
+      "error": "Prefetch失敗: 2025-10-21T13:52:12 prefetch.3.2.1 int: item not found while executing query within virtual file system module - cannot resolve remote location of 'ERR317316, ERR323433, ERR323445'\n",
+      "time": "2025-10-21T21:52:12.567028"
+    },
+    {
+      "run_id": "ERR317319, ERR323436, ERR323448",
+      "step": "download_process",
+      "error": "Prefetch失敗: 2025-10-21T13:52:12 prefetch.3.2.1 int: item not found while executing query within virtual file system module - cannot resolve remote location of 'ERR317319, ERR323436, ERR323448'\n",
+      "time": "2025-10-21T21:52:12.595172"
+    },
+    {
+      "run_id": "ERR317318, ERR323435, ERR323447",
+      "step": "download_process",
+      "error": "Prefetch失敗: 2025-10-21T13:52:12 prefetch.3.2.1 int: item not found while executing query within virtual file system module - cannot resolve remote location of 'ERR317318, ERR323435, ERR323447'\n",
+      "time": "2025-10-21T21:52:12.600797"
+    },
+    {
+      "run_id": "ERR317320, ERR323437, ERR323449",
+      "step": "download_process",
+      "error": "Prefetch失敗: 2025-10-21T13:52:12 prefetch.3.2.1 int: item not found while executing query within virtual file system module - cannot resolve remote location of 'ERR317320, ERR323437, ERR323449'\n",
+      "time": "2025-10-21T21:52:12.681155"
+    },
+    {
+      "run_id": "ERR317321, ERR323438, ERR323450",
+      "step": "download_process",
+      "error": "Prefetch失敗: 2025-10-21T13:52:14 prefetch.3.2.1 int: item not found while executing query within virtual file system module - cannot resolve remote location of 'ERR317321, ERR323438, ERR323450'\n",
+      "time": "2025-10-21T21:52:14.697986"
+    },
+    {
+      "run_id": "ERR317327, ERR340923, ERR340935",
+      "step": "download_process",
+      "error": "Prefetch失敗: 2025-10-21T13:52:14 prefetch.3.2.1 int: item not found while executing query within virtual file system module - cannot resolve remote location of 'ERR317327, ERR340923, ERR340935'\n",
+      "time": "2025-10-21T21:52:14.722428"
+    },
+    {
+      "run_id": "ERR317325, ERR323442, ERR323454",
+      "step": "download_process",
+      "error": "Prefetch失敗: 2025-10-21T13:52:14 prefetch.3.2.1 int: item not found while executing query within virtual file system module - cannot resolve remote location of 'ERR317325, ERR323442, ERR323454'\n",
+      "time": "2025-10-21T21:52:14.724640"
+    },
+    {
+      "run_id": "ERR317330, ERR340926, ERR340938",
+      "step": "download_process",
+      "error": "Prefetch失敗: 2025-10-21T13:52:14 prefetch.3.2.1 int: item not found while executing query within virtual file system module - cannot resolve remote location of 'ERR317330, ERR340926, ERR340938'\n",
+      "time": "2025-10-21T21:52:14.780610"
+    },
+    {
+      "run_id": "ERR317333, ERR340929, ERR340941",
+      "step": "download_process",
+      "error": "Prefetch失敗: 2025-10-21T13:52:14 prefetch.3.2.1 int: item not found while executing query within virtual file system module - cannot resolve remote location of 'ERR317333, ERR340929, ERR340941'\n",
+      "time": "2025-10-21T21:52:14.787218"
+    },
+    {
+      "run_id": "ERR317335, ERR340931, ERR340943",
+      "step": "download_process",
+      "error": "Prefetch失敗: 2025-10-21T13:52:14 prefetch.3.2.1 int: item not found while executing query within virtual file system module - cannot resolve remote location of 'ERR317335, ERR340931, ERR340943'\n",
+      "time": "2025-10-21T21:52:14.813436"
+    },
+    {
+      "run_id": "ERR317345, ERR323462, ERR323474",
+      "step": "download_process",
+      "error": "Prefetch失敗: ",
+      "time": "2025-10-21T21:52:16.346392"
+    },
+    {
+      "run_id": "ERR317344, ERR323461, ERR323473",
+      "step": "download_process",
+      "error": "Prefetch失敗: ",
+      "time": "2025-10-21T21:52:16.350258"
+    },
+    {
+      "run_id": "ERR317338, ERR323455, ERR323467",
+      "step": "download_process",
+      "error": "Prefetch失敗: 2025-10-21T13:52:16 prefetch.3.2.1 int: item not found while executing query within virtual file system module - cannot resolve remote location of 'ERR317338, ERR323455, ERR323467'\n",
+      "time": "2025-10-21T21:52:16.873384"
+    },
+    {
+      "run_id": "ERR317339, ERR323456, ERR323468",
+      "step": "download_process",
+      "error": "Prefetch失敗: 2025-10-21T13:52:16 prefetch.3.2.1 int: item not found while executing query within virtual file system module - cannot resolve remote location of 'ERR317339, ERR323456, ERR323468'\n",
+      "time": "2025-10-21T21:52:16.886148"
+    },
+    {
+      "run_id": "ERR317340, ERR323457, ERR323469",
+      "step": "download_process",
+      "error": "Prefetch失敗: 2025-10-21T13:52:16 prefetch.3.2.1 int: item not found while executing query within virtual file system module - cannot resolve remote location of 'ERR317340, ERR323457, ERR323469'\n",
+      "time": "2025-10-21T21:52:16.902814"
+    },
+    {
+      "run_id": "ERR317343, ERR323460, ERR323472",
+      "step": "download_process",
+      "error": "Prefetch失敗: 2025-10-21T13:52:16 prefetch.3.2.1 int: item not found while executing query within virtual file system module - cannot resolve remote location of 'ERR317343, ERR323460, ERR323472'\n",
+      "time": "2025-10-21T21:52:16.940430"
+    },
+    {
+      "run_id": "ERR317351, ERR343512, ERR343524",
+      "step": "download_process",
+      "error": "Prefetch失敗: ",
+      "time": "2025-10-21T21:52:17.238049"
+    },
+    {
+      "run_id": "ERR317350, ERR343511, ERR343523",
+      "step": "download_process",
+      "error": "Prefetch失敗: ",
+      "time": "2025-10-21T21:52:17.242484"
+    },
+    {
+      "run_id": "ERR317349, ERR323466, ERR323478",
+      "step": "download_process",
+      "error": "Prefetch失敗: ",
+      "time": "2025-10-21T21:52:17.245292"
+    },
+    {
+      "run_id": "ERR317348, ERR323465, ERR323477",
+      "step": "download_process",
+      "error": "Prefetch失敗: ",
+      "time": "2025-10-21T21:52:17.247300"
+    },
+    {
+      "run_id": "ERR317358, ERR343519, ERR343531",
+      "step": "download_process",
+      "error": "Prefetch失敗: ",
+      "time": "2025-10-21T21:52:17.666417"
+    },
+    {
+      "run_id": "ERR317355, ERR343516, ERR343528",
+      "step": "download_process",
+      "error": "Prefetch失敗: ",
+      "time": "2025-10-21T21:52:17.670140"
+    },
+    {
+      "run_id": "ERR317354, ERR343515, ERR343527",
+      "step": "download_process",
+      "error": "Prefetch失敗: ",
+      "time": "2025-10-21T21:52:17.674932"
+    },
+    {
+      "run_id": "ERR317365, ERR343538, ERR343550",
+      "step": "download_process",
+      "error": "Prefetch失敗: ",
+      "time": "2025-10-21T21:52:17.905818"
+    },
+    {
+      "run_id": "ERR317360, ERR343521, ERR343533",
+      "step": "download_process",
+      "error": "Prefetch失敗: ",
+      "time": "2025-10-21T21:52:17.907591"
+    },
+    {
+      "run_id": "ERR317359, ERR343520, ERR343532",
+      "step": "download_process",
+      "error": "Prefetch失敗: ",
+      "time": "2025-10-21T21:52:17.914788"
+    },
+    {
+      "run_id": "ERR317372, ERR343545, ERR343557",
+      "step": "download_process",
+      "error": "Prefetch失敗: ",
+      "time": "2025-10-21T21:52:18.476444"
+    },
+    {
+      "run_id": "ERR317371, ERR343544, ERR343556",
+      "step": "download_process",
+      "error": "Prefetch失敗: ",
+      "time": "2025-10-21T21:52:18.481094"
+    },
+    {
+      "run_id": "ERR317366, ERR343539, ERR343551",
+      "step": "download_process",
+      "error": "Prefetch失敗: ",
+      "time": "2025-10-21T21:52:18.486712"
+    },
+    {
+      "run_id": "ERR317347, ERR323464, ERR323476",
+      "step": "download_process",
+      "error": "Prefetch失敗: 2025-10-21T13:52:18 prefetch.3.2.1 int: item not found while executing query within virtual file system module - cannot resolve remote location of 'ERR317347, ERR323464, ERR323476'\n",
+      "time": "2025-10-21T21:52:18.519188"
+    },
+    {
+      "run_id": "ERR317346, ERR323463, ERR323475",
+      "step": "download_process",
+      "error": "Prefetch失敗: 2025-10-21T13:52:18 prefetch.3.2.1 int: item not found while executing query within virtual file system module - cannot resolve remote location of 'ERR317346, ERR323463, ERR323475'\n",
+      "time": "2025-10-21T21:52:18.541962"
+    },
+    {
+      "run_id": "ERR320016, ERR328393, ERR328405",
+      "step": "download_process",
+      "error": "Prefetch失敗: ",
+      "time": "2025-10-21T21:52:18.881340"
+    },
+    {
+      "run_id": "ERR320010, ERR327386, ERR327398",
+      "step": "download_process",
+      "error": "Prefetch失敗: ",
+      "time": "2025-10-21T21:52:18.884960"
+    },
+    {
+      "run_id": "ERR320052, ERR328439, ERR328451",
+      "step": "download_process",
+      "error": "Prefetch失敗: ",
+      "time": "2025-10-21T21:52:19.293055"
+    },
+    {
+      "run_id": "ERR320031, ERR343565, ERR343577",
+      "step": "download_process",
+      "error": "Prefetch失敗: ",
+      "time": "2025-10-21T21:52:19.296784"
+    },
+    {
+      "run_id": "ERR317352, ERR343513, ERR343525",
+      "step": "download_process",
+      "error": "Prefetch失敗: 2025-10-21T13:52:19 prefetch.3.2.1 int: item not found while executing query within virtual file system module - cannot resolve remote location of 'ERR317352, ERR343513, ERR343525'\n",
+      "time": "2025-10-21T21:52:19.394233"
+    },
+    {
+      "run_id": "ERR320088, ERR323530, ERR323542",
+      "step": "download_process",
+      "error": "Prefetch失敗: ",
+      "time": "2025-10-21T21:52:19.802600"
+    },
+    {
+      "run_id": "ERR320087, ERR323529, ERR323541",
+      "step": "download_process",
+      "error": "Prefetch失敗: ",
+      "time": "2025-10-21T21:52:19.806845"
+    },
+    {
+      "run_id": "ERR320056, ERR328443, ERR328455",
+      "step": "download_process",
+      "error": "Prefetch失敗: ",
+      "time": "2025-10-21T21:52:19.808978"
+    },
+    {
+      "run_id": "ERR320093, ERR323535, ERR323547",
+      "step": "download_process",
+      "error": "Prefetch失敗: ",
+      "time": "2025-10-21T21:52:20.253541"
+    },
+    {
+      "run_id": "ERR320091, ERR323533, ERR323545",
+      "step": "download_process",
+      "error": "Prefetch失敗: ",
+      "time": "2025-10-21T21:52:20.257177"
+    },
+    {
+      "run_id": "ERR319990, ERR327354, ERR327366",
+      "step": "download_process",
+      "error": "Prefetch失敗: 2025-10-21T13:52:20 prefetch.3.2.1 int: item not found while executing query within virtual file system module - cannot resolve remote location of 'ERR319990, ERR327354, ERR327366'\n",
+      "time": "2025-10-21T21:52:20.659816"
+    },
+    {
+      "run_id": "ERR319977, ERR327329, ERR327341",
+      "step": "download_process",
+      "error": "Prefetch失敗: 2025-10-21T13:52:20 prefetch.3.2.1 int: item not found while executing query within virtual file system module - cannot resolve remote location of 'ERR319977, ERR327329, ERR327341'\n",
+      "time": "2025-10-21T21:52:20.716599"
+    },
+    {
+      "run_id": "ERR320008, ERR327384, ERR327396",
+      "step": "download_process",
+      "error": "Prefetch失敗: 2025-10-21T13:52:20 prefetch.3.2.1 int: item not found while executing query within virtual file system module - cannot resolve remote location of 'ERR320008, ERR327384, ERR327396'\n",
+      "time": "2025-10-21T21:52:20.717292"
+    },
+    {
+      "run_id": "ERR320097, ERR323551, ERR323563",
+      "step": "download_process",
+      "error": "Prefetch失敗: ",
+      "time": "2025-10-21T21:52:20.724918"
+    },
+    {
+      "run_id": "ERR320096, ERR323538, ERR323550",
+      "step": "download_process",
+      "error": "Prefetch失敗: ",
+      "time": "2025-10-21T21:52:20.727796"
+    },
+    {
+      "run_id": "ERR320095, ERR323537, ERR323549",
+      "step": "download_process",
+      "error": "Prefetch失敗: ",
+      "time": "2025-10-21T21:52:20.730795"
+    },
+    {
+      "run_id": "ERR320103, ERR323557, ERR323569",
+      "step": "download_process",
+      "error": "Prefetch失敗: ",
+      "time": "2025-10-21T21:52:21.176255"
+    },
+    {
+      "run_id": "ERR320102, ERR323556, ERR323568",
+      "step": "download_process",
+      "error": "Prefetch失敗: ",
+      "time": "2025-10-21T21:52:21.176570"
+    },
+    {
+      "run_id": "ERR320100, ERR323554, ERR323566",
+      "step": "download_process",
+      "error": "Prefetch失敗: ",
+      "time": "2025-10-21T21:52:21.185393"
+    },
+    {
+      "run_id": "ERR320090, ERR323532, ERR323544",
+      "step": "download_process",
+      "error": "Prefetch失敗: 2025-10-21T13:52:21 prefetch.3.2.1 int: item not found while executing query within virtual file system module - cannot resolve remote location of 'ERR320090, ERR323532, ERR323544'\n",
+      "time": "2025-10-21T21:52:21.995682"
+    },
+    {
+      "run_id": "ERR320107, ERR323561, ERR323573",
+      "step": "download_process",
+      "error": "Prefetch失敗: ",
+      "time": "2025-10-21T21:52:22.270394"
+    },
+    {
+      "run_id": "ERR320106, ERR323560, ERR323572",
+      "step": "download_process",
+      "error": "Prefetch失敗: ",
+      "time": "2025-10-21T21:52:22.274854"
+    },
+    {
+      "run_id": "ERR320105, ERR323559, ERR323571",
+      "step": "download_process",
+      "error": "Prefetch失敗: ",
+      "time": "2025-10-21T21:52:22.276665"
+    },
+    {
+      "run_id": "ERR320104, ERR323558, ERR323570",
+      "step": "download_process",
+      "error": "Prefetch失敗: ",
+      "time": "2025-10-21T21:52:22.278978"
+    },
+    {
+      "run_id": "ERR320098, ERR323552, ERR323564",
+      "step": "download_process",
+      "error": "Prefetch失敗: 2025-10-21T13:52:22 prefetch.3.2.1 int: item not found while executing query within virtual file system module - cannot resolve remote location of 'ERR320098, ERR323552, ERR323564'\n",
+      "time": "2025-10-21T21:52:22.944934"
+    },
+    {
+      "run_id": "ERR320099, ERR323553, ERR323565",
+      "step": "download_process",
+      "error": "Prefetch失敗: 2025-10-21T13:52:22 prefetch.3.2.1 int: item not found while executing query within virtual file system module - cannot resolve remote location of 'ERR320099, ERR323553, ERR323565'\n",
+      "time": "2025-10-21T21:52:22.950692"
+    },
+    {
+      "run_id": "ERR320113, ERR323579, ERR323591",
+      "step": "download_process",
+      "error": "Prefetch失敗: ",
+      "time": "2025-10-21T21:52:23.697032"
+    },
+    {
+      "run_id": "ERR320112, ERR323578, ERR323590",
+      "step": "download_process",
+      "error": "Prefetch失敗: ",
+      "time": "2025-10-21T21:52:23.701512"
+    },
+    {
+      "run_id": "ERR320108, ERR323562, ERR323574",
+      "step": "download_process",
+      "error": "Prefetch失敗: 2025-10-21T13:52:24 prefetch.3.2.1 int: item not found while executing query within virtual file system module - cannot resolve remote location of 'ERR320108, ERR323562, ERR323574'\n",
+      "time": "2025-10-21T21:52:24.459807"
+    },
+    {
+      "run_id": "ERR320109, ERR323575, ERR323587",
+      "step": "download_process",
+      "error": "Prefetch失敗: 2025-10-21T13:52:24 prefetch.3.2.1 int: item not found while executing query within virtual file system module - cannot resolve remote location of 'ERR320109, ERR323575, ERR323587'\n",
+      "time": "2025-10-21T21:52:24.463852"
+    },
+    {
+      "run_id": "ERR320110, ERR323576, ERR323588",
+      "step": "download_process",
+      "error": "Prefetch失敗: 2025-10-21T13:52:24 prefetch.3.2.1 int: item not found while executing query within virtual file system module - cannot resolve remote location of 'ERR320110, ERR323576, ERR323588'\n",
+      "time": "2025-10-21T21:52:24.464096"
+    },
+    {
+      "run_id": "ERR320111, ERR323577, ERR323589",
+      "step": "download_process",
+      "error": "Prefetch失敗: 2025-10-21T13:52:24 prefetch.3.2.1 int: item not found while executing query within virtual file system module - cannot resolve remote location of 'ERR320111, ERR323577, ERR323589'\n",
+      "time": "2025-10-21T21:52:24.481413"
+    },
+    {
+      "run_id": "ERR320115, ERR323581, ERR323593",
+      "step": "download_process",
+      "error": "Prefetch失敗: 2025-10-21T13:52:25 prefetch.3.2.1 int: item not found while executing query within virtual file system module - cannot resolve remote location of 'ERR320115, ERR323581, ERR323593'\n",
+      "time": "2025-10-21T21:52:25.869945"
+    },
+    {
+      "run_id": "ERR320114, ERR323580, ERR323592",
+      "step": "download_process",
+      "error": "Prefetch失敗: 2025-10-21T13:52:25 prefetch.3.2.1 int: item not found while executing query within virtual file system module - cannot resolve remote location of 'ERR320114, ERR323580, ERR323592'\n",
+      "time": "2025-10-21T21:52:25.875052"
+    }
+  ],
+  "total_downloaded_mb": 0,
+  "timestamp": "2025-10-02 01:28:38",
+  "last_update": "2025-10-19T21:35:53.392438",
+  "total_size_mb": 1608154.8115615845,
+  "remaining": []
+}
