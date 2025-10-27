@@ -5,6 +5,8 @@ FROM python:3.9-slim
 ENV PYTHONDONTWRITEBYTECODE 1
 # 設定環境變數，確保 Python 輸出不會被緩衝
 ENV PYTHONUNBUFFERED 1
+# 設定為非互動式環境
+ENV DEBIAN_FRONTEND=noninteractive
 
 # 設定工作目錄
 WORKDIR /app
@@ -30,9 +32,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 # 複製專案中的所有其他檔案
 COPY . .
 
-# 執行 SRA Toolkit 的 vdb-config 來進行初始設定 (非互動式)
 # 這會在家目錄下創建 .ncbi 目錄，避免執行時的首次設定提示
-RUN vdb-config --non-interactive
 
 # 執行 check_and_create_paths 函數來創建資料夾
 RUN python -c "from config import check_and_create_paths; check_and_create_paths()"

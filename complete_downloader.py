@@ -16,6 +16,7 @@ from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
 import sys
+import os
 
 # 導入配置和工具
 try:
@@ -499,12 +500,14 @@ def main():
     # 確認開始
     print(f"\n" + "=" * 80)
     print(f"準備開始下載 {len(missing_samples)} 個樣本")
-    print(
-        f"預估時間: {len(missing_samples) / MAX_WORKERS * 0.5:.1f} - {len(missing_samples) / MAX_WORKERS * 1.5:.1f} 小時"
-    )
+    print(f"預估時間: {len(missing_samples) / MAX_WORKERS * 0.5:.1f} - {len(missing_samples) / MAX_WORKERS * 1.5:.1f} 小時")
     print(f"=" * 80)
 
-    input("\n按Enter開始，或Ctrl+C取消...")
+    # 如果在非互動式環境中（例如 Docker），則跳過等待
+    if not sys.stdout.isatty() and os.environ.get("DEBIAN_FRONTEND") == "noninteractive":
+        print("\n在非互動式環境中，自動開始...")
+    else:
+        input("\n按Enter開始，或Ctrl+C取消...")
 
     # 開始處理
     start_time = time.time()
