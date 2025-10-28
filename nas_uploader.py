@@ -7,6 +7,7 @@ NAS SFTP 上傳模組
 
 import paramiko
 import os
+import posixpath  # 用於處理遠端 POSIX 路徑
 from pathlib import Path
 from datetime import datetime
 import time
@@ -53,7 +54,7 @@ class NASUploader:
             print(f"⚠️  關閉連接時發生錯誤: {e}")
     
     def create_remote_dir(self, remote_path):
-        """在 NAS 上創建目錄"""
+        """在 NAS 上創建目錄（使用 POSIX 路徑處理）"""
         try:
             self.sftp.stat(remote_path)
             # 目錄已存在
@@ -64,10 +65,11 @@ class NASUploader:
                 print(f"✅ 創建遠端目錄: {remote_path}")
             except Exception as e:
                 # 可能是父目錄不存在，遞迴創建
-                parent = str(Path(remote_path).parent)
-                if parent != remote_path:
+                parent = posixpath.dirname(remote_path)  # 使用 POSIX 路徑處理
+                if parent and parent != remote_path and parent != '/':
                     self.create_remote_dir(parent)
                     self.sftp.mkdir(remote_path)
+                    print(f"✅ 創建遠端目錄: {remote_path}")
     
     def upload_file(self, local_file, remote_path, show_progress=True):
         """
@@ -86,12 +88,13 @@ class NASUploader:
             print(f"❌ 本地檔案不存在: {local_file}")
             return False
         
-        # 從遠端路徑中分離出目錄和檔名
+        # 從遠端路徑中分離出目錄和檔名（使用 POSIX 路徑處理）
         remote_file = remote_path  # remote_path 已經是完整路徑
-        remote_dir = str(Path(remote_path).parent)
+        remote_dir = posixpath.dirname(remote_path)  # 使用 POSIX 路徑處理
         
         # 確保遠端目錄存在
-        self.create_remote_dir(remote_dir)
+        if remote_dir:
+            self.create_remote_dir(remote_dir)
         
         # 獲取檔案大小
         file_size = local_file.stat().st_size
