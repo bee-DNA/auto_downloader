@@ -366,6 +366,10 @@ def download_sample(run_id, progress_mgr):
         elapsed = time.time() - start_time
 
         if result.returncode != 0:
+            # 檢查是否為樣本不存在的錯誤
+            error_msg = result.stderr.lower()
+            if "item not found" in error_msg or "cannot resolve" in error_msg:
+                raise Exception(f"樣本不存在於SRA數據庫（可能已下架）: {run_id}")
             raise Exception(f"Prefetch失敗: {result.stderr}")
 
         if not sra_file.exists():
@@ -527,7 +531,12 @@ def download_sample(run_id, progress_mgr):
         # 標記為失敗
         # Extract step from error message if possible
         error_str = str(e).lower()
-        step = "unknown_process"
+        
+        # 區分不同類型的失敗
+        if "樣本不存在" in error_str or "item not found" in error_str:
+            step = "sample_not_found"  # 樣本在數據庫中不存在
+        else:
+            step = "unknown_process"
         if "prefetch" in error_str:
             step = "prefetch"
         elif "fasterq-dump" in error_str or "fastq" in error_str:
@@ -648,6 +657,32 @@ def main():
     print(f"總耗時: {elapsed/3600:.2f} 小時")
     print(f"成功: {success_count} 個")
     print(f"失敗: {fail_count} 個")
+
+    # 顯示不存在的樣本列表
+    if fail_count > 0:
+        failed_list = progress_mgr.progress.get("failed", [])
+        not_found_samples = [
+            f["run_id"] for f in failed_list 
+            if f.get("step") == "sample_not_found"
+        ]
+        
+        if not_found_samples:
+            print(f"\n⚠️  以下 {len(not_found_samples)} 個樣本在SRA數據庫中不存在（可能已下架）:")
+            for sample in not_found_samples:
+                print(f"   - {sample}")
+            print(f"\n   這些樣本將被跳過，是正常現象。")
+        
+        # 顯示其他真正的錯誤
+        real_errors = [
+            f for f in failed_list 
+            if f.get("step") != "sample_not_found"
+        ]
+        
+        if real_errors:
+            print(f"\n❌ 以下 {len(real_errors)} 個樣本發生真正的錯誤:")
+            for error in real_errors[:10]:  # 最多顯示10個
+                print(f"   - {error['run_id']}: {error.get('step', 'unknown')}")
+                print(f"     {error.get('error', '')[:100]}")
 
     # nas_uploader.disconnect() # No longer needed here
 
