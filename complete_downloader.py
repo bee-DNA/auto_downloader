@@ -379,18 +379,47 @@ def download_sample(run_id, nas_uploader, progress_mgr):
         elapsed = time.time() - start_time
 
         if result.returncode != 0:
+            # 如果解壓失敗，很有可能是SRA檔案損壞，刪除它以便重試
+            if sra_file.parent.exists():
+                shutil.rmtree(sra_file.parent)
+                print(f"    ⚠️  偵測到解壓失敗，已刪除損壞的SRA目錄: {sra_file.parent}")
             raise Exception(f"Fasterq-dump失敗: {result.stderr}")
 
-        if not fastq_1.exists() or not fastq_2.exists():
-            raise Exception(f"FASTQ檔案不完整")
+        # 增加對單端(Single-End)和雙端(Paired-End)的檢查
+        is_paired = fastq_1.exists() and fastq_2.exists()
+        
+        # 檢查是否至少有一個 FASTQ 檔案存在
+        # Note: This logic is simplified. A more robust check might be needed if single-end files don't follow {run_id}.fastq pattern
+        if not is_paired and not next(FASTQ_OUTPUT_DIR.glob(f"{run_id}*.fastq"), None):
+            # 如果SRA檔案存在，則刪除它，因為它可能已損壞
+            if sra_file.parent.exists():
+                shutil.rmtree(sra_file.parent)
+                print(f"    ⚠️  解壓後未生成任何FASTQ檔案，已刪除可能損壞的SRA目錄: {sra_file.parent}")
+            raise Exception(f"FASTQ檔案不完整或未生成")
 
-        fastq_size = (fastq_1.stat().st_size + fastq_2.stat().st_size) / (1024**3)
-        print(f"✅ 解壓完成 ({elapsed:.1f}秒, {fastq_size:.2f} GB)")
+        fastq_files_to_upload = []
+        if is_paired:
+            fastq_files_to_upload.extend([fastq_1, fastq_2])
+            total_size = (fastq_1.stat().st_size + fastq_2.stat().st_size) / (1024**3)
+            print(f"✅ 解壓完成 (雙端, {elapsed:.1f}秒, {total_size:.2f} GB)")
+        else:
+            # 處理單端情況或檔名不為 _1/_2 的情況
+            single_fastq = next(FASTQ_OUTPUT_DIR.glob(f"{run_id}*.fastq"), None)
+            if single_fastq and single_fastq.exists():
+                fastq_files_to_upload.append(single_fastq)
+                total_size = single_fastq.stat().st_size / (1024**3)
+                print(f"✅ 解壓完成 (單端, {elapsed:.1f}秒, {total_size:.2f} GB)")
+            else:
+                # This case should be caught by the check above, but as a fallback
+                if sra_file.parent.exists():
+                    shutil.rmtree(sra_file.parent)
+                raise Exception("找不到解壓後的FASTQ檔案，已清理SRA檔案以便重試")
+
 
         # ==================== 步驟3: 上傳FASTQ到NAS ====================
         print(f"\n[3/5] 📤 上傳FASTQ到NAS...")
 
-        for fastq_file in [fastq_1, fastq_2]:
+        for fastq_file in fastq_files_to_upload:
             remote_path = f"{NAS_CONFIG['fastq_path']}/{fastq_file.name}"
             if not nas_uploader.upload_file(fastq_file, remote_path, "FASTQ"):
                 raise Exception(f"FASTQ上傳失敗: {fastq_file.name}")
@@ -409,7 +438,7 @@ def download_sample(run_id, nas_uploader, progress_mgr):
         print(f"\n[5/5] 🧹 清理本地檔案...")
 
         # 刪除FASTQ
-        for f in [fastq_1, fastq_2]:
+        for f in fastq_files_to_upload:
             if f.exists():
                 f.unlink()
                 print(f"    ✅ 已刪除: {f.name}")
