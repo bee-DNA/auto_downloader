@@ -367,6 +367,34 @@ def download_sample(run_id, progress_mgr):
         sra_size = sra_file.stat().st_size / (1024**3)
         print(f"✅ Prefetch完成 ({elapsed:.1f}秒, {sra_size:.2f} GB)")
 
+        # ==================== 步驟1.5: 驗證SRA檔案完整性 ====================
+        print(f"\n[1.5/5] 🔍 驗證SRA檔案完整性...")
+        
+        cmd_validate = [
+            VDB_VALIDATE_EXE,
+            str(sra_file)
+        ]
+        
+        start_time = time.time()
+        result_validate = subprocess.run(
+            cmd_validate, capture_output=True, text=True, timeout=1800  # 30分鐘超時
+        )
+        elapsed_validate = time.time() - start_time
+        
+        if result_validate.returncode != 0:
+            # 校驗失敗，表示SRA檔案不完整或損壞
+            print(f"    ❌ SRA檔案校驗失敗 ({elapsed_validate:.1f}秒)")
+            print(f"    錯誤訊息: {result_validate.stderr[:200]}")
+            
+            # 刪除損壞的SRA檔案
+            if sra_file.parent.exists():
+                shutil.rmtree(sra_file.parent)
+                print(f"    🗑️  已刪除損壞的SRA檔案: {sra_file.parent}")
+            
+            raise Exception(f"SRA檔案完整性校驗失敗，檔案可能下載不完整 (實際大小: {sra_size:.2f} GB)")
+        
+        print(f"✅ SRA檔案校驗通過 ({elapsed_validate:.1f}秒)")
+
         # ==================== 步驟2: Fasterq-dump ====================
         print(f"\n[2/5] 🔓 解壓FASTQ...")
         FASTQ_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
