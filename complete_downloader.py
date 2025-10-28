@@ -342,6 +342,15 @@ def download_sample(run_id, progress_mgr):
         # ==================== 步驟1: Prefetch ====================
         print(f"\n[1/5] 📥 下載SRA...")
         
+        # 檢查磁碟空間
+        import shutil as shutil_disk
+        disk_usage = shutil_disk.disk_usage(str(SRA_TEMP_DIR))
+        free_gb = disk_usage.free / (1024**3)
+        print(f"    💾 可用磁碟空間: {free_gb:.2f} GB")
+        
+        if free_gb < 10:
+            raise Exception(f"磁碟空間不足: 僅剩 {free_gb:.2f} GB")
+        
         # 清理整個 SRA 目錄（確保完全乾淨的狀態）
         if sra_file.parent.exists():
             shutil.rmtree(sra_file.parent)
@@ -349,6 +358,10 @@ def download_sample(run_id, progress_mgr):
         
         # 重新創建乾淨的目錄
         sra_file.parent.mkdir(parents=True, exist_ok=True)
+        
+        # 確認目錄創建成功
+        if not sra_file.parent.exists():
+            raise Exception(f"無法創建目錄: {sra_file.parent}")
 
         cmd = [
             PREFETCH_EXE,  # 使用配置中的路徑
@@ -362,10 +375,18 @@ def download_sample(run_id, progress_mgr):
         start_time = time.time()
         print(f"    執行指令: {' '.join(cmd)}")  # 除錯：顯示實際執行的指令
         
+        # 確認目錄在執行前仍然存在
+        if not sra_file.parent.exists():
+            raise Exception(f"目錄在 prefetch 執行前消失: {sra_file.parent}")
+        
         result = subprocess.run(
             cmd, capture_output=True, text=True, timeout=PREFETCH_TIMEOUT
         )
         elapsed = time.time() - start_time
+        
+        # 確認目錄在執行後仍然存在
+        if not sra_file.parent.exists():
+            raise Exception(f"目錄在 prefetch 執行後消失: {sra_file.parent}（可能被其他執行緒刪除）")
 
         if result.returncode != 0:
             # 輸出完整錯誤訊息以便除錯
