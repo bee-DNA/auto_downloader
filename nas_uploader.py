@@ -75,7 +75,7 @@ class NASUploader:
         
         Args:
             local_file: 本地檔案路徑
-            remote_path: 遠端目錄路徑
+            remote_path: 遠端檔案完整路徑（包含檔名）
             show_progress: 是否顯示進度
         
         Returns:
@@ -86,11 +86,12 @@ class NASUploader:
             print(f"❌ 本地檔案不存在: {local_file}")
             return False
         
-        # 確保遠端目錄存在
-        self.create_remote_dir(remote_path)
+        # 從遠端路徑中分離出目錄和檔名
+        remote_file = remote_path  # remote_path 已經是完整路徑
+        remote_dir = str(Path(remote_path).parent)
         
-        # 遠端完整路徑
-        remote_file = f"{remote_path}/{local_file.name}"
+        # 確保遠端目錄存在
+        self.create_remote_dir(remote_dir)
         
         # 獲取檔案大小
         file_size = local_file.stat().st_size
