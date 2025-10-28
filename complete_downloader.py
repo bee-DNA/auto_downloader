@@ -341,17 +341,14 @@ def download_sample(run_id, progress_mgr):
         print(f"    🔌 樣本 {run_id} 的獨立NAS連接已建立")
         # ==================== 步驟1: Prefetch ====================
         print(f"\n[1/5] 📥 下載SRA...")
-        sra_file.parent.mkdir(parents=True, exist_ok=True)
-
-        # 清理可能存在的舊 SRA 檔案和鎖定檔案（防止續傳損壞的檔案）
-        if sra_file.exists():
-            sra_file.unlink()
-            print(f"    🗑️  已刪除舊的 SRA 檔案: {sra_file.name}")
         
-        lock_file = sra_file.with_suffix('.sra.lock')
-        if lock_file.exists():
-            lock_file.unlink()
-            print(f"    🔓 已清理舊的鎖定檔案: {lock_file.name}")
+        # 清理整個 SRA 目錄（確保完全乾淨的狀態）
+        if sra_file.parent.exists():
+            shutil.rmtree(sra_file.parent)
+            print(f"    🗑️  已刪除舊的 SRA 目錄: {sra_file.parent}")
+        
+        # 重新創建乾淨的目錄
+        sra_file.parent.mkdir(parents=True, exist_ok=True)
 
         cmd = [
             PREFETCH_EXE,  # 使用配置中的路徑
