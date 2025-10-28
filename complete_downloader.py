@@ -360,12 +360,19 @@ def download_sample(run_id, progress_mgr):
         ]
 
         start_time = time.time()
+        print(f"    執行指令: {' '.join(cmd)}")  # 除錯：顯示實際執行的指令
+        
         result = subprocess.run(
             cmd, capture_output=True, text=True, timeout=PREFETCH_TIMEOUT
         )
         elapsed = time.time() - start_time
 
         if result.returncode != 0:
+            # 輸出完整錯誤訊息以便除錯
+            print(f"    ❌ Prefetch返回碼: {result.returncode}")
+            print(f"    📋 STDOUT: {result.stdout}")
+            print(f"    📋 STDERR: {result.stderr}")
+            
             # 檢查是否為樣本不存在的錯誤
             error_msg = result.stderr.lower()
             if "item not found" in error_msg or "cannot resolve" in error_msg:
