@@ -317,11 +317,24 @@ def get_missing_samples():
     return sorted(list(missing))
 
 
-def download_sample(run_id, nas_uploader, progress_mgr):
-    """下載、解壓、上傳單個樣本"""
+def download_sample(run_id, progress_mgr):
+    """下載、解壓、上傳單個樣本 (每個線程獨立連接NAS)"""
     print(f"\n{'='*70}")
     print(f"🔄 處理樣本: {run_id}")
     print(f"{'='*70}")
+
+    nas_uploader = NASUploader(
+        NAS_CONFIG["host"],
+        NAS_CONFIG["port"],
+        NAS_CONFIG["username"],
+        NAS_CONFIG["password"],
+    )
+
+    try:
+        # ==================== 建立獨立的NAS連接 ====================
+        if not nas_uploader.connect():
+            raise Exception("NAS連接失敗")
+        print(f"    🔌 樣本 {run_id} 的獨立NAS連接已建立")
 
     sra_file = SRA_TEMP_DIR / run_id / f"{run_id}.sra"
     fastq_1 = FASTQ_OUTPUT_DIR / f"{run_id}_1.fastq"
@@ -460,18 +473,44 @@ def download_sample(run_id, nas_uploader, progress_mgr):
 
         # 清理失敗的檔案
         try:
-            for f in [fastq_1, fastq_2]:
+            # Re-define paths for cleanup in case of early failure
+            fastq_1 = FASTQ_OUTPUT_DIR / f"{run_id}_1.fastq"
+            fastq_2 = FASTQ_OUTPUT_DIR / f"{run_id}_2.fastq"
+            sra_file_parent = SRA_TEMP_DIR / run_id
+
+            # Clean up any partial fastq files
+            for f in list(FASTQ_OUTPUT_DIR.glob(f"{run_id}*.fastq")):
                 if f.exists():
                     f.unlink()
-            if sra_file.parent.exists():
-                shutil.rmtree(sra_file.parent)
-        except:
-            pass
+            
+            # Clean up SRA directory
+            if sra_file_parent.exists():
+                shutil.rmtree(sra_file_parent)
+        except Exception as cleanup_error:
+            print(f"    ⚠️ 清理失敗檔案時發生錯誤: {cleanup_error}")
 
         # 標記為失敗
-        progress_mgr.mark_failed(run_id, "download_process", str(e))
+        # Extract step from error message if possible
+        error_str = str(e).lower()
+        step = "unknown_process"
+        if "prefetch" in error_str:
+            step = "prefetch"
+        elif "fasterq-dump" in error_str or "fastq" in error_str:
+            step = "dumping"
+        elif "upload" in error_str:
+            step = "upload"
+        elif "nas" in error_str:
+            step = "nas_connect"
+        
+        progress_mgr.mark_failed(run_id, step, str(e))
 
         return False
+    
+    finally:
+        # 無論成功或失敗，都確保斷開NAS連接
+        if nas_uploader and nas_uploader.sftp:
+            nas_uploader.disconnect()
+            print(f"    🔌 樣本 {run_id} 的獨立NAS連接已關閉")
 
 
 # ==================== 主程序 ====================
@@ -493,20 +532,13 @@ def main():
     TMP_DIR.mkdir(parents=True, exist_ok=True)
     FASTQ_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-    # 連接NAS
-    print(f"\n🔌 正在連接NAS...")
-    nas_uploader = NASUploader(
-        NAS_CONFIG["host"],
-        NAS_CONFIG["port"],
-        NAS_CONFIG["username"],
-        NAS_CONFIG["password"],
-    )
-
-    if not nas_uploader.connect():
-        print("❌ NAS連接失敗，程序終止")
-        return
-
-    print("✅ NAS連接成功")
+    # 移除主函數中的NAS連接，改為在每個線程中獨立創建
+    # print(f"\n🔌 正在連接NAS...")
+    # nas_uploader = NASUploader(...)
+    # if not nas_uploader.connect():
+    #     print("❌ NAS連接失敗，程序終止")
+    #     return
+    # print("✅ NAS連接成功")
 
     # 初始化進度管理
     progress_mgr = ProgressManager()
@@ -523,7 +555,7 @@ def main():
 
     if not missing_samples:
         print("\n✅ 所有樣本都已在NAS上！")
-        nas_uploader.disconnect()
+        # nas_uploader.disconnect() # No longer needed here
         return
 
     # 確認開始
@@ -546,8 +578,9 @@ def main():
     print(f"\n🚀 開始處理...")
 
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
+        # 將 progress_mgr 傳遞給每個任務，不再傳遞共享的 nas_uploader
         futures = {
-            executor.submit(download_sample, run_id, nas_uploader, progress_mgr): run_id
+            executor.submit(download_sample, run_id, progress_mgr): run_id
             for run_id in missing_samples
         }
 
@@ -581,7 +614,7 @@ def main():
     print(f"成功: {success_count} 個")
     print(f"失敗: {fail_count} 個")
 
-    nas_uploader.disconnect()
+    # nas_uploader.disconnect() # No longer needed here
 
 
 if __name__ == "__main__":
