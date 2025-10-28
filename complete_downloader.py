@@ -415,6 +415,7 @@ def download_sample(run_id, progress_mgr):
             str(FASTQ_OUTPUT_DIR),
             "-t",
             str(TMP_DIR),
+            "--split-files",  # 分離成 _1.fastq 和 _2.fastq
             "-f",
         ]
 
