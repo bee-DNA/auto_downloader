@@ -73,7 +73,7 @@ FASTQ_OUTPUT_DIR = str(DATA_DIR / "fastq_output")
 # 下載器配置
 # ============================================
 # 並行下載數量（同時處理幾個樣本）
-MAX_WORKERS = int(os.environ.get("MAX_WORKERS", 6))
+MAX_WORKERS = int(os.environ.get("MAX_WORKERS", 4))
 
 # fasterq-dump 線程數（每個樣本用幾個線程解壓）
 FASTERQ_THREADS = int(os.environ.get("FASTERQ_THREADS", 5))
