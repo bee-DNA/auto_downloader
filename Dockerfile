@@ -2,9 +2,9 @@
 FROM python:3.9-slim
 
 # 設定環境變數，防止 Python 寫入 .pyc 檔案
-ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONDONTWRITEBYTECODE=1
 # 設定環境變數，確保 Python 輸出不會被緩衝
-ENV PYTHONUNBUFFERED 1
+ENV PYTHONUNBUFFERED=1
 # 設定為非互動式環境
 ENV DEBIAN_FRONTEND=noninteractive
 
