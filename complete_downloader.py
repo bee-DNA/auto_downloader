@@ -353,6 +353,21 @@ def download_sample(run_id, progress_mgr):
         
         # 清理整個 SRA 目錄（確保完全乾淨的狀態）
         if sra_file.parent.exists():
+            # 先清理所有臨時檔案和鎖檔
+            for tmp_file in sra_file.parent.glob("*.tmp"):
+                try:
+                    tmp_file.unlink()
+                    print(f"    🗑️  已刪除臨時檔: {tmp_file.name}")
+                except:
+                    pass
+            for lock_file in sra_file.parent.glob("*.lock"):
+                try:
+                    lock_file.unlink()
+                    print(f"    🗑️  已刪除鎖檔: {lock_file.name}")
+                except:
+                    pass
+            
+            # 然後刪除整個目錄
             shutil.rmtree(sra_file.parent)
             print(f"    🗑️  已刪除舊的 SRA 目錄: {sra_file.parent}")
         
@@ -362,7 +377,6 @@ def download_sample(run_id, progress_mgr):
         # 確認目錄創建成功
         if not sra_file.parent.exists():
             raise Exception(f"無法創建目錄: {sra_file.parent}")
-
         cmd = [
             PREFETCH_EXE,  # 使用配置中的路徑
             run_id,
@@ -370,6 +384,7 @@ def download_sample(run_id, progress_mgr):
             str(SRA_TEMP_DIR),
             "--max-size",
             "100GB",
+            "--force", "all",  # 強制重新下載，避免部分下載衝突
         ]
 
         start_time = time.time()
@@ -384,6 +399,9 @@ def download_sample(run_id, progress_mgr):
         )
         elapsed = time.time() - start_time
         
+        # 給檔案系統一點時間同步（Docker volume 可能需要）
+        time.sleep(2)
+        
         # 確認目錄在執行後仍然存在
         if not sra_file.parent.exists():
             raise Exception(f"目錄在 prefetch 執行後消失: {sra_file.parent}（可能被其他執行緒刪除）")
@@ -394,8 +412,12 @@ def download_sample(run_id, progress_mgr):
             print(f"    📋 STDOUT: {result.stdout}")
             print(f"    📋 STDERR: {result.stderr}")
             
-            # 檢查是否為樣本不存在的錯誤
+            # 檢查是否為路徑問題（可能是並行衝突）
             error_msg = result.stderr.lower()
+            if "path not found" in error_msg or "cannot openfilewrite" in error_msg:
+                raise Exception(f"Prefetch路徑錯誤（可能是並行衝突或權限問題）: {result.stderr}")
+            
+            # 檢查是否為樣本不存在的錯誤
             if "item not found" in error_msg or "cannot resolve" in error_msg:
                 raise Exception(f"樣本不存在於SRA數據庫（可能已下架）: {run_id}")
             raise Exception(f"Prefetch失敗: {result.stderr}")
