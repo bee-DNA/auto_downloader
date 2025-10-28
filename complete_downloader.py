@@ -469,15 +469,16 @@ def download_sample(run_id, progress_mgr):
             if not nas_uploader.upload_file(fastq_file, remote_path, show_progress=True):
                 raise Exception(f"FASTQ上傳失敗: {fastq_file.name}")
 
-        # ==================== 步驟4: 上傳SRA到NAS ====================
-        print(f"\n[4/5] 📤 上傳SRA到NAS...")
-
-        sra_remote_dir = f"{NAS_CONFIG['sra_path']}/{run_id}"
-        sra_remote_path = f"{sra_remote_dir}/{sra_file.name}"
-
-        nas_uploader.create_remote_dir(sra_remote_dir)
-        if not nas_uploader.upload_file(sra_file, sra_remote_path, show_progress=True):
-            raise Exception("SRA上傳失敗")
+        # ==================== 步驟4: 上傳SRA到NAS（已停用） ====================
+        # 註解：由於 SRA 檔案上傳經常失敗且不是必需的（FASTQ 已足夠），因此停用此步驟
+        # print(f"\n[4/5] 📤 上傳SRA到NAS...")
+        # sra_remote_dir = f"{NAS_CONFIG['sra_path']}/{run_id}"
+        # sra_remote_path = f"{sra_remote_dir}/{sra_file.name}"
+        # nas_uploader.create_remote_dir(sra_remote_dir)
+        # if not nas_uploader.upload_file(sra_file, sra_remote_path, show_progress=True):
+        #     raise Exception("SRA上傳失敗")
+        
+        print(f"\n[4/5] ⏭️  跳過SRA上傳（FASTQ已足夠）")
 
         # ==================== 步驟5: 清理本地檔案 ====================
         print(f"\n[5/5] 🧹 清理本地檔案...")
