@@ -330,17 +330,15 @@ def download_sample(run_id, progress_mgr):
         NAS_CONFIG["password"],
     )
 
-    try:
-        # ==================== 建立獨立的NAS連接 ====================
-        if not nas_uploader.connect():
-            raise Exception("NAS連接失敗")
-        print(f"    🔌 樣本 {run_id} 的獨立NAS連接已建立")
-
     sra_file = SRA_TEMP_DIR / run_id / f"{run_id}.sra"
     fastq_1 = FASTQ_OUTPUT_DIR / f"{run_id}_1.fastq"
     fastq_2 = FASTQ_OUTPUT_DIR / f"{run_id}_2.fastq"
 
     try:
+        # ==================== 建立獨立的NAS連接 ====================
+        if not nas_uploader.connect():
+            raise Exception("NAS連接失敗")
+        print(f"    🔌 樣本 {run_id} 的獨立NAS連接已建立")
         # ==================== 步驟1: Prefetch ====================
         print(f"\n[1/5] 📥 下載SRA...")
         sra_file.parent.mkdir(parents=True, exist_ok=True)
