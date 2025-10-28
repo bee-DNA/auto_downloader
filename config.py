@@ -21,7 +21,7 @@ NCBI_EMAIL = os.environ.get("NCBI_EMAIL", "123321123axx@gmail.com")
 NAS_HOST = os.environ.get("NAS_HOST", "bioailab.synology.me")
 NAS_PORT = int(os.environ.get("NAS_PORT", 22))
 NAS_USER = os.environ.get("NAS_USER", "bioailab")
-NAS_PASS = os.environ.get("NAS_PASS", "Ncueailab403")
+NAS_PASS = "Ncueailab403"
 
 # NAS 遠端路徑 (相對路徑)
 NAS_FASTQ_PATH = "Bee_metagenomics/Bee_metagenomics/fastq_data"
