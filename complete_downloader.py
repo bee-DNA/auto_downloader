@@ -343,6 +343,12 @@ def download_sample(run_id, progress_mgr):
         print(f"\n[1/5] 📥 下載SRA...")
         sra_file.parent.mkdir(parents=True, exist_ok=True)
 
+        # 清理可能存在的舊鎖定檔案（防止上次中斷導致的鎖定）
+        lock_file = sra_file.with_suffix('.sra.lock')
+        if lock_file.exists():
+            lock_file.unlink()
+            print(f"    🔓 已清理舊的鎖定檔案: {lock_file.name}")
+
         cmd = [
             PREFETCH_EXE,  # 使用配置中的路徑
             run_id,
