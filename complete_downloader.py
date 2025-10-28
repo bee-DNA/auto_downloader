@@ -466,7 +466,7 @@ def download_sample(run_id, progress_mgr):
 
         for fastq_file in fastq_files_to_upload:
             remote_path = f"{NAS_CONFIG['fastq_path']}/{fastq_file.name}"
-            if not nas_uploader.upload_file(fastq_file, remote_path, "FASTQ"):
+            if not nas_uploader.upload_file(fastq_file, remote_path, show_progress=True):
                 raise Exception(f"FASTQ上傳失敗: {fastq_file.name}")
 
         # ==================== 步驟4: 上傳SRA到NAS ====================
@@ -476,7 +476,7 @@ def download_sample(run_id, progress_mgr):
         sra_remote_path = f"{sra_remote_dir}/{sra_file.name}"
 
         nas_uploader.create_remote_dir(sra_remote_dir)
-        if not nas_uploader.upload_file(sra_file, sra_remote_path, "SRA"):
+        if not nas_uploader.upload_file(sra_file, sra_remote_path, show_progress=True):
             raise Exception("SRA上傳失敗")
 
         # ==================== 步驟5: 清理本地檔案 ====================
