@@ -343,7 +343,11 @@ def download_sample(run_id, progress_mgr):
         print(f"\n[1/5] 📥 下載SRA...")
         sra_file.parent.mkdir(parents=True, exist_ok=True)
 
-        # 清理可能存在的舊鎖定檔案（防止上次中斷導致的鎖定）
+        # 清理可能存在的舊 SRA 檔案和鎖定檔案（防止續傳損壞的檔案）
+        if sra_file.exists():
+            sra_file.unlink()
+            print(f"    🗑️  已刪除舊的 SRA 檔案: {sra_file.name}")
+        
         lock_file = sra_file.with_suffix('.sra.lock')
         if lock_file.exists():
             lock_file.unlink()
