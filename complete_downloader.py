@@ -49,10 +49,10 @@ NAS_CONFIG = {
     "sra_path": NAS_SRA_PATH,
 }
 
-# 超時設置
-PREFETCH_TIMEOUT = 3600  # 1小時
-FASTERQ_TIMEOUT = 5400  # 1.5小時
-UPLOAD_TIMEOUT = 3600  # 1小時
+# 超時設置（可透過環境變數調整）
+PREFETCH_TIMEOUT = int(os.environ.get("PREFETCH_TIMEOUT", 10800))  # 3小時（大檔案需要更長時間）
+FASTERQ_TIMEOUT = int(os.environ.get("FASTERQ_TIMEOUT", 10800))  # 3小時
+UPLOAD_TIMEOUT = int(os.environ.get("UPLOAD_TIMEOUT", 7200))  # 2小時
 
 # ==================== 進度管理 ====================
 # 注意: NASUploader 已從 nas_uploader.py 導入
