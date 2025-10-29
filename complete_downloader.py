@@ -398,7 +398,7 @@ def download_sample(run_id, progress_mgr):
         if not sra_file.parent.exists():
             raise Exception(f"無法創建目錄: {sra_file.parent}")
         # 構建 prefetch 命令
-        # 加入 --type sra 參數跳過參考序列下載（減少網路錯誤）
+        # 加入參數完全跳過參考序列下載（減少網路錯誤和下載時間）
         cmd = [
             PREFETCH_EXE,  # 使用配置中的路徑
             run_id,
@@ -407,7 +407,8 @@ def download_sample(run_id, progress_mgr):
             "--max-size",
             "100GB",
             "--force", "all",  # 強制重新下載，避免部分下載衝突
-            "--type", "sra",  # 只下載 SRA 檔案，跳過參考序列
+            "--type", "sra",  # 只下載 SRA 檔案
+            "--no-refseqs",  # 完全跳過參考序列依賴（關鍵！）
         ]
 
         start_time = time.time()
