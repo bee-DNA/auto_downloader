@@ -350,13 +350,13 @@ def download_sample(run_id, progress_mgr):
             raise Exception("NAS連接失敗")
         print(f"    🔌 樣本 {run_id} 的獨立NAS連接已建立")
         # ==================== 步驟1: Prefetch ====================
-        print(f"\n[1/5] 📥 下載SRA...")
+        print(f"\n[1/5] 📥 下載SRA...", flush=True)
         
         # 檢查磁碟空間
         import shutil as shutil_disk
         disk_usage = shutil_disk.disk_usage(str(SRA_TEMP_DIR))
         free_gb = disk_usage.free / (1024**3)
-        print(f"    💾 可用磁碟空間: {free_gb:.2f} GB")
+        print(f"    💾 可用磁碟空間: {free_gb:.2f} GB", flush=True)
         
         # 如果空間不足，嘗試自動清理
         if free_gb < 50:  # 低於 50GB 時警告並清理
@@ -469,7 +469,7 @@ def download_sample(run_id, progress_mgr):
         print(f"✅ Prefetch完成 ({elapsed:.1f}秒, {sra_size:.2f} GB)")
 
         # ==================== 步驟1.5: 驗證SRA檔案完整性 ====================
-        print(f"\n[1.5/5] 🔍 驗證SRA檔案完整性...")
+        print(f"\n[1.5/5] 🔍 驗證SRA檔案完整性...", flush=True)
         
         cmd_validate = [
             VDB_VALIDATE_EXE,
@@ -497,7 +497,7 @@ def download_sample(run_id, progress_mgr):
         print(f"✅ SRA檔案校驗通過 ({elapsed_validate:.1f}秒)")
 
         # ==================== 步驟2: Fasterq-dump ====================
-        print(f"\n[2/5] 🔓 解壓FASTQ...")
+        print(f"\n[2/5] 🔓 解壓FASTQ...", flush=True)
         FASTQ_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
         cmd = [
@@ -557,14 +557,14 @@ def download_sample(run_id, progress_mgr):
                 raise Exception("找不到解壓後的FASTQ檔案，已清理SRA檔案以便重試")
 
         # ==================== 步驟2.5: 立即刪除SRA檔案釋放空間 ====================
-        print(f"\n[2.5/5] 🗑️  刪除SRA檔案釋放空間...")
+        print(f"\n[2.5/5] 🗑️  刪除SRA檔案釋放空間...", flush=True)
         if sra_file.parent.exists():
             sra_size_gb = sra_file.stat().st_size / (1024**3) if sra_file.exists() else 0
             shutil.rmtree(sra_file.parent)
             print(f"    ✅ 已刪除SRA檔案 (釋放 {sra_size_gb:.2f} GB): {sra_file.parent}")
 
         # ==================== 步驟3: 上傳FASTQ到NAS ====================
-        print(f"\n[3/5] 📤 上傳FASTQ到NAS...")
+        print(f"\n[3/5] 📤 上傳FASTQ到NAS...", flush=True)
 
         for fastq_file in fastq_files_to_upload:
             remote_path = f"{NAS_CONFIG['fastq_path']}/{fastq_file.name}"
@@ -580,10 +580,10 @@ def download_sample(run_id, progress_mgr):
         # if not nas_uploader.upload_file(sra_file, sra_remote_path, show_progress=True):
         #     raise Exception("SRA上傳失敗")
         
-        print(f"\n[4/5] ⏭️  跳過SRA上傳（FASTQ已足夠）")
+        print(f"\n[4/5] ⏭️  跳過SRA上傳（FASTQ已足夠）", flush=True)
 
         # ==================== 步驟5: 清理本地檔案 ====================
-        print(f"\n[5/5] 🧹 清理本地檔案...")
+        print(f"\n[5/5] 🧹 清理本地檔案...", flush=True)
 
         # 刪除FASTQ
         for f in fastq_files_to_upload:
