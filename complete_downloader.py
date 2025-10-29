@@ -397,6 +397,8 @@ def download_sample(run_id, progress_mgr):
         # 確認目錄創建成功
         if not sra_file.parent.exists():
             raise Exception(f"無法創建目錄: {sra_file.parent}")
+        # 構建 prefetch 命令
+        # 加入 --type sra 參數跳過參考序列下載（減少網路錯誤）
         cmd = [
             PREFETCH_EXE,  # 使用配置中的路徑
             run_id,
@@ -405,14 +407,48 @@ def download_sample(run_id, progress_mgr):
             "--max-size",
             "100GB",
             "--force", "all",  # 強制重新下載，避免部分下載衝突
+            "--type", "sra",  # 只下載 SRA 檔案，跳過參考序列
         ]
 
         start_time = time.time()
         print(f"    執行指令: {' '.join(cmd)}")  # 除錯：顯示實際執行的指令
         
-        result = subprocess.run(
-            cmd, capture_output=True, text=True, timeout=PREFETCH_TIMEOUT
-        )
+        # 加入重試機制（最多 3 次）
+        max_retries = 3
+        retry_delay = 10
+        result = None
+        
+        for attempt in range(1, max_retries + 1):
+            try:
+                result = subprocess.run(
+                    cmd, capture_output=True, text=True, timeout=PREFETCH_TIMEOUT
+                )
+                
+                # 如果成功或非網路錯誤，跳出重試
+                if result.returncode == 0:
+                    break
+                    
+                # 檢查是否為網路/連接錯誤
+                error_msg = result.stderr.lower()
+                is_network_error = any(keyword in error_msg for keyword in [
+                    "connection failed", "timeout", "network", "failed to download"
+                ])
+                
+                if is_network_error and attempt < max_retries:
+                    print(f"    ⚠️ 網路錯誤，{retry_delay}秒後重試 ({attempt}/{max_retries})...")
+                    time.sleep(retry_delay)
+                    continue
+                else:
+                    break
+                    
+            except subprocess.TimeoutExpired:
+                if attempt < max_retries:
+                    print(f"    ⚠️ 超時，{retry_delay}秒後重試 ({attempt}/{max_retries})...")
+                    time.sleep(retry_delay)
+                    continue
+                else:
+                    raise
+        
         elapsed = time.time() - start_time
 
         # 給檔案系統一點時間同步（Docker volume 可能需要）
