@@ -546,6 +546,12 @@ def download_sample(run_id, progress_mgr):
                     shutil.rmtree(sra_file.parent)
                 raise Exception("找不到解壓後的FASTQ檔案，已清理SRA檔案以便重試")
 
+        # ==================== 步驟2.5: 立即刪除SRA檔案釋放空間 ====================
+        print(f"\n[2.5/5] 🗑️  刪除SRA檔案釋放空間...")
+        if sra_file.parent.exists():
+            sra_size_gb = sra_file.stat().st_size / (1024**3) if sra_file.exists() else 0
+            shutil.rmtree(sra_file.parent)
+            print(f"    ✅ 已刪除SRA檔案 (釋放 {sra_size_gb:.2f} GB): {sra_file.parent}")
 
         # ==================== 步驟3: 上傳FASTQ到NAS ====================
         print(f"\n[3/5] 📤 上傳FASTQ到NAS...")
@@ -575,10 +581,11 @@ def download_sample(run_id, progress_mgr):
                 f.unlink()
                 print(f"    ✅ 已刪除: {f.name}")
 
-        # 刪除SRA目錄
+        # SRA 已在步驟 2.5 刪除，這裡不需要再刪除
+        # 但保留檢查以防萬一
         if sra_file.parent.exists():
             shutil.rmtree(sra_file.parent)
-            print(f"    ✅ 已刪除: {sra_file.parent}")
+            print(f"    ⚠️  發現殘留的SRA目錄，已刪除: {sra_file.parent}")
 
         # 標記為完成
         progress_mgr.mark_completed(run_id)
