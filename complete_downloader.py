@@ -297,11 +297,17 @@ def get_all_runs_from_file():
 
 
 def get_missing_samples():
-    """獲取需要下載的樣本清單（606個runs.txt - NAS已有的）"""
+    """獲取需要下載的樣本清單（606個runs.txt - NAS已有的 - 進度檔案已完成的）"""
     # 從runs.txt讀取所有SRR樣本
     all_runs = get_all_runs_from_file()
 
     print(f"📄 runs.txt中的SRR樣本: {len(all_runs)} 個")
+
+    # 獲取進度管理器
+    progress_mgr = ProgressManager()
+    completed_from_progress = set(progress_mgr.progress.get("completed", []))
+    
+    print(f"📋 進度檔案記錄已完成: {len(completed_from_progress)} 個")
 
     # 獲取NAS已有的
     print(f"🔍 正在檢查NAS已有樣本...")
@@ -309,8 +315,12 @@ def get_missing_samples():
 
     print(f"✅ NAS已有: {len(nas_samples)} 個")
 
+    # 合併已完成的樣本（NAS上的 + 進度檔案記錄的）
+    completed_samples = nas_samples | completed_from_progress
+    print(f"📊 總共已完成: {len(completed_samples)} 個（NAS + 進度檔案）")
+
     # 計算缺少的
-    missing = all_runs - nas_samples
+    missing = all_runs - completed_samples
 
     print(f"📊 需要下載: {len(missing)} 個")
 
