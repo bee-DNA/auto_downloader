@@ -414,14 +414,68 @@ def download_sample(run_id, progress_mgr):
             cmd, capture_output=True, text=True, timeout=PREFETCH_TIMEOUT
         )
         elapsed = time.time() - start_time
-        
+
         # 給檔案系統一點時間同步（Docker volume 可能需要）
         time.sleep(2)
-        
-        # 先檢查檔案是否存在
+
+        # 如果檔案還沒有出現，嘗試輪詢並搜尋可能的位置（例如 NCBI cache）
         file_exists = sra_file.exists()
-        
-        # 檢查 prefetch 結果
+        postcheck_wait = int(os.environ.get("PREFETCH_POSTCHECK_WAIT", 120))
+        poll_interval = 2
+        checked_alt = []
+
+        if not file_exists and result.returncode == 0:
+            print(f"    ⚠️ Prefetch 返回成功但檔案尚未可見，開始輪詢最多 {postcheck_wait}s...")
+            t0 = time.time()
+            while time.time() - t0 < postcheck_wait:
+                if sra_file.exists():
+                    file_exists = True
+                    break
+                # 搜尋同目錄下的候選檔案
+                if sra_file.parent.exists():
+                    for f in sra_file.parent.iterdir():
+                        try:
+                            if f.is_file():
+                                name = f.name.lower()
+                                # 常見情況: 檔名包含 run id 或副檔名為 .sra
+                                if run_id.lower() in name or name.endswith(".sra"):
+                                    # 嘗試將它移到預期位置（如果不同）
+                                    try:
+                                        if f.resolve() != sra_file.resolve():
+                                            print(f"    🔁 發現候選檔案，嘗試重命名: {f} -> {sra_file}")
+                                            f.rename(sra_file)
+                                    except Exception:
+                                        # 解析路徑可能失敗，改用 copy
+                                        try:
+                                            shutil.copy2(f, sra_file)
+                                        except Exception:
+                                            pass
+                                    file_exists = sra_file.exists()
+                                    break
+                        except Exception:
+                            continue
+                # 搜尋 NCBI 預設快取位置
+                try:
+                    home_cache = Path.home() / ".ncbi" / "public" / "sra"
+                    if home_cache.exists() and home_cache not in checked_alt:
+                        checked_alt.append(home_cache)
+                        for f in home_cache.rglob("*"):
+                            if f.is_file() and run_id.lower() in f.name.lower():
+                                print(f"    🔎 在 NCBI cache 發現候選: {f}，複製到 {sra_file}")
+                                try:
+                                    shutil.copy2(f, sra_file)
+                                except Exception:
+                                    pass
+                                file_exists = sra_file.exists()
+                                break
+                except Exception:
+                    pass
+
+                if file_exists:
+                    break
+                time.sleep(poll_interval)
+
+        # 檢查 prefetch 是否成功（檢查檔案而非目錄，避免誤判）
         if result.returncode != 0 or not file_exists:
             # 輸出完整錯誤訊息以便除錯
             print(f"    ❌ Prefetch返回碼: {result.returncode}")
@@ -429,25 +483,25 @@ def download_sample(run_id, progress_mgr):
             print(f"    📋 STDERR: {result.stderr}")
             print(f"    📁 檔案存在: {file_exists}")
             print(f"    📂 預期路徑: {sra_file}")
-            
+
             # 列出實際下載的內容（如果目錄存在）
             if sra_file.parent.exists():
                 actual_files = list(sra_file.parent.rglob("*"))
-                print(f"    📂 實際檔案: {[str(f) for f in actual_files[:5]]}")
-            
+                print(f"    📂 實際檔案: {[str(f) for f in actual_files[:20]]}")
+
             # 檢查是否為路徑問題（可能是並行衝突）
             error_msg = result.stderr.lower()
             if "path not found" in error_msg or "cannot openfilewrite" in error_msg:
                 raise Exception(f"Prefetch路徑錯誤（可能是並行衝突或權限問題）: {result.stderr}")
-            
+
             # 檢查是否為樣本不存在的錯誤
             if "item not found" in error_msg or "cannot resolve" in error_msg:
                 raise Exception(f"樣本不存在於SRA數據庫（可能已下架）: {run_id}")
-            
+
             # 如果返回碼是0但檔案不存在，可能是網路問題或檔案格式問題
             if result.returncode == 0 and not file_exists:
                 raise Exception(f"Prefetch顯示成功但檔案不存在（可能是網路中斷或格式錯誤）。STDOUT: {result.stdout[:200]}")
-            
+
             raise Exception(f"Prefetch失敗: {result.stderr}")
 
         if not sra_file.exists():
