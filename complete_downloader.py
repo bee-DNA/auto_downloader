@@ -358,40 +358,15 @@ def download_sample(run_id, progress_mgr):
         free_gb = disk_usage.free / (1024**3)
         print(f"    💾 可用磁碟空間: {free_gb:.2f} GB", flush=True)
         
-        # 如果空間不足，嘗試自動清理
-        if free_gb < 50:  # 低於 50GB 時警告並清理
-            print(f"    ⚠️  磁碟空間偏低，清理殘留檔案...")
-            
-            # 清理空資料夾
-            empty_count = 0
-            for item in Path(SRA_TEMP_DIR).iterdir():
-                if item.is_dir() and not any(item.iterdir()):
-                    try:
-                        item.rmdir()
-                        empty_count += 1
-                    except:
-                        pass
-            
-            # 清理臨時檔
-            temp_count = 0
-            for tmp_file in Path(SRA_TEMP_DIR).rglob("*.tmp"):
-                try:
-                    tmp_file.unlink()
-                    temp_count += 1
-                except:
-                    pass
-            
-            if empty_count > 0 or temp_count > 0:
-                # 重新檢查空間
-                disk_usage = shutil_disk.disk_usage(str(SRA_TEMP_DIR))
-                free_gb = disk_usage.free / (1024**3)
-                print(f"    🧹 已清理: {empty_count} 個空資料夾, {temp_count} 個臨時檔")
-                print(f"    💾 清理後可用空間: {free_gb:.2f} GB")
+        # 如果空間不足，警告但不自動清理其他樣本的目錄（避免並行衝突）
+        if free_gb < 50:
+            print(f"    ⚠️  磁碟空間偏低: {free_gb:.2f} GB")
+            print(f"    提示: 建議手動執行 cleanup_disk.py 清理殘留檔案")
         
         if free_gb < 10:
             raise Exception(f"磁碟空間不足: 僅剩 {free_gb:.2f} GB，請手動清理或增加磁碟空間")
         
-        # 清理整個 SRA 目錄（確保完全乾淨的狀態）
+        # 只清理當前樣本的舊目錄（避免誤刪其他執行緒的目錄）
         if sra_file.parent.exists():
             # 先清理所有臨時檔案和鎖檔
             for tmp_file in sra_file.parent.glob("*.tmp"):
@@ -430,10 +405,6 @@ def download_sample(run_id, progress_mgr):
         start_time = time.time()
         print(f"    執行指令: {' '.join(cmd)}")  # 除錯：顯示實際執行的指令
         
-        # 確認目錄在執行前仍然存在
-        if not sra_file.parent.exists():
-            raise Exception(f"目錄在 prefetch 執行前消失: {sra_file.parent}")
-        
         result = subprocess.run(
             cmd, capture_output=True, text=True, timeout=PREFETCH_TIMEOUT
         )
@@ -442,10 +413,7 @@ def download_sample(run_id, progress_mgr):
         # 給檔案系統一點時間同步（Docker volume 可能需要）
         time.sleep(2)
         
-        # 確認目錄在執行後仍然存在
-        if not sra_file.parent.exists():
-            raise Exception(f"目錄在 prefetch 執行後消失: {sra_file.parent}（可能被其他執行緒刪除）")
-
+        # 檢查 prefetch 是否成功（檢查檔案而非目錄，避免誤判）
         if result.returncode != 0:
             # 輸出完整錯誤訊息以便除錯
             print(f"    ❌ Prefetch返回碼: {result.returncode}")
