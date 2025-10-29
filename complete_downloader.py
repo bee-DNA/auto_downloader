@@ -17,14 +17,19 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
 import sys
 import os
+import threading
 
 # 導入配置和工具
 try:
     from config import *
     from nas_uploader import NASUploader
+    from tqdm import tqdm
 except ImportError as e:
     print(f"❌ 導入失敗: {e}")
-    print("請確保 config.py 和 nas_uploader.py 在同一目錄")
+    if "tqdm" in str(e):
+        print("請安裝 tqdm: pip install tqdm")
+    else:
+        print("請確保 config.py 和 nas_uploader.py 在同一目錄")
     sys.exit(1)
 
 # ==================== 從 config.py 讀取配置 ====================
@@ -686,6 +691,7 @@ def main():
 
     print(f"\n🚀 開始處理...")
 
+    # 使用 tqdm 進度條
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
         # 將 progress_mgr 傳遞給每個任務，不再傳遞共享的 nas_uploader
         futures = {
@@ -693,25 +699,26 @@ def main():
             for run_id in missing_samples
         }
 
-        for future in as_completed(futures):
-            run_id = futures[future]
-            try:
-                if future.result():
-                    success_count += 1
-                else:
+        # 創建進度條
+        with tqdm(total=len(missing_samples), desc="總體進度", unit="樣本", 
+                  ncols=100, bar_format='{l_bar}{bar}| {n_fmt}/{total_fmt} [{elapsed}<{remaining}]') as pbar:
+            
+            for future in as_completed(futures):
+                run_id = futures[future]
+                try:
+                    if future.result():
+                        success_count += 1
+                        pbar.set_postfix({"成功": success_count, "失敗": fail_count})
+                    else:
+                        fail_count += 1
+                        pbar.set_postfix({"成功": success_count, "失敗": fail_count})
+                except Exception as e:
+                    print(f"\n❌ 執行錯誤 {run_id}: {e}")
                     fail_count += 1
-            except Exception as e:
-                print(f"❌ 執行錯誤 {run_id}: {e}")
-                fail_count += 1
-
-            # 顯示進度
-            total_processed = success_count + fail_count
-            print(f"\n{'='*80}")
-            print(
-                f"📊 進度: {total_processed}/{len(missing_samples)} "
-                f"(成功: {success_count}, 失敗: {fail_count})"
-            )
-            print(f"{'='*80}\n")
+                    pbar.set_postfix({"成功": success_count, "失敗": fail_count})
+                
+                # 更新進度條
+                pbar.update(1)
 
     # 完成
     elapsed = time.time() - start_time
