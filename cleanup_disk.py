@@ -7,7 +7,7 @@
 
 import shutil
 from pathlib import Path
-from config import SRA_TEMP_DIR, FASTQ_OUTPUT_DIR, TMP_DIR
+from config import SRA_TEMP_DIR, FASTQ_OUTPUT_DIR, FASTQ_TEMP_DIR
 
 def cleanup_empty_dirs(base_dir):
     """刪除空資料夾"""
@@ -110,9 +110,9 @@ if __name__ == "__main__":
     print(f"\n清理 FASTQ 目錄: {FASTQ_OUTPUT_DIR}")
     fastq_temp = cleanup_temp_files(FASTQ_OUTPUT_DIR)
     
-    # 3. 清理 TMP_DIR
-    print(f"\n清理 TMP 目錄: {TMP_DIR}")
-    tmp_files = cleanup_temp_files(TMP_DIR)
+    # 3. 清理 FASTQ_TEMP_DIR
+    print(f"\n清理 FASTQ_TEMP 目錄: {FASTQ_TEMP_DIR}")
+    tmp_files = cleanup_temp_files(FASTQ_TEMP_DIR)
     
     # 顯示清理後的磁碟使用情況
     print("\n" + "=" * 80)
