@@ -348,8 +348,38 @@ def download_sample(run_id, progress_mgr):
         free_gb = disk_usage.free / (1024**3)
         print(f"    💾 可用磁碟空間: {free_gb:.2f} GB")
         
+        # 如果空間不足，嘗試自動清理
+        if free_gb < 50:  # 低於 50GB 時警告並清理
+            print(f"    ⚠️  磁碟空間偏低，清理殘留檔案...")
+            
+            # 清理空資料夾
+            empty_count = 0
+            for item in Path(SRA_TEMP_DIR).iterdir():
+                if item.is_dir() and not any(item.iterdir()):
+                    try:
+                        item.rmdir()
+                        empty_count += 1
+                    except:
+                        pass
+            
+            # 清理臨時檔
+            temp_count = 0
+            for tmp_file in Path(SRA_TEMP_DIR).rglob("*.tmp"):
+                try:
+                    tmp_file.unlink()
+                    temp_count += 1
+                except:
+                    pass
+            
+            if empty_count > 0 or temp_count > 0:
+                # 重新檢查空間
+                disk_usage = shutil_disk.disk_usage(str(SRA_TEMP_DIR))
+                free_gb = disk_usage.free / (1024**3)
+                print(f"    🧹 已清理: {empty_count} 個空資料夾, {temp_count} 個臨時檔")
+                print(f"    💾 清理後可用空間: {free_gb:.2f} GB")
+        
         if free_gb < 10:
-            raise Exception(f"磁碟空間不足: 僅剩 {free_gb:.2f} GB")
+            raise Exception(f"磁碟空間不足: 僅剩 {free_gb:.2f} GB，請手動清理或增加磁碟空間")
         
         # 清理整個 SRA 目錄（確保完全乾淨的狀態）
         if sra_file.parent.exists():
