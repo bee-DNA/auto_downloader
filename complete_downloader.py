@@ -418,12 +418,22 @@ def download_sample(run_id, progress_mgr):
         # 給檔案系統一點時間同步（Docker volume 可能需要）
         time.sleep(2)
         
-        # 檢查 prefetch 是否成功（檢查檔案而非目錄，避免誤判）
-        if result.returncode != 0:
+        # 先檢查檔案是否存在
+        file_exists = sra_file.exists()
+        
+        # 檢查 prefetch 結果
+        if result.returncode != 0 or not file_exists:
             # 輸出完整錯誤訊息以便除錯
             print(f"    ❌ Prefetch返回碼: {result.returncode}")
             print(f"    📋 STDOUT: {result.stdout}")
             print(f"    📋 STDERR: {result.stderr}")
+            print(f"    📁 檔案存在: {file_exists}")
+            print(f"    📂 預期路徑: {sra_file}")
+            
+            # 列出實際下載的內容（如果目錄存在）
+            if sra_file.parent.exists():
+                actual_files = list(sra_file.parent.rglob("*"))
+                print(f"    📂 實際檔案: {[str(f) for f in actual_files[:5]]}")
             
             # 檢查是否為路徑問題（可能是並行衝突）
             error_msg = result.stderr.lower()
@@ -433,6 +443,11 @@ def download_sample(run_id, progress_mgr):
             # 檢查是否為樣本不存在的錯誤
             if "item not found" in error_msg or "cannot resolve" in error_msg:
                 raise Exception(f"樣本不存在於SRA數據庫（可能已下架）: {run_id}")
+            
+            # 如果返回碼是0但檔案不存在，可能是網路問題或檔案格式問題
+            if result.returncode == 0 and not file_exists:
+                raise Exception(f"Prefetch顯示成功但檔案不存在（可能是網路中斷或格式錯誤）。STDOUT: {result.stdout[:200]}")
+            
             raise Exception(f"Prefetch失敗: {result.stderr}")
 
         if not sra_file.exists():
