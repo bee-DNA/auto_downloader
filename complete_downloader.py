@@ -398,7 +398,7 @@ def download_sample(run_id, progress_mgr):
         if not sra_file.parent.exists():
             raise Exception(f"無法創建目錄: {sra_file.parent}")
         # 構建 prefetch 命令
-        # 加入參數完全跳過參考序列下載（減少網路錯誤和下載時間）
+        # 移除 --no-refseqs（不支援），改用容錯處理參考序列錯誤
         cmd = [
             PREFETCH_EXE,  # 使用配置中的路徑
             run_id,
@@ -407,8 +407,7 @@ def download_sample(run_id, progress_mgr):
             "--max-size",
             "100GB",
             "--force", "all",  # 強制重新下載，避免部分下載衝突
-            "--type", "sra",  # 只下載 SRA 檔案
-            "--no-refseqs",  # 完全跳過參考序列依賴（關鍵！）
+            "--type", "sra",  # 只下載 SRA 檔案（但仍可能下載 refseq）
         ]
 
         start_time = time.time()
@@ -535,11 +534,21 @@ def download_sample(run_id, progress_mgr):
             if "item not found" in error_msg or "cannot resolve" in error_msg:
                 raise Exception(f"樣本不存在於SRA數據庫（可能已下架）: {run_id}")
 
-            # 如果返回碼是0但檔案不存在，可能是網路問題或檔案格式問題
-            if result.returncode == 0 and not file_exists:
+            # 檢查是否僅為參考序列下載失敗（但 SRA 本身已下載成功）
+            is_refseq_only_error = (
+                "failed to download" in error_msg and 
+                "refseq" in error_msg and 
+                sra_file.exists()
+            )
+            
+            if is_refseq_only_error:
+                print(f"    ⚠️ 參考序列下載失敗，但 SRA 本身已下載完成，繼續處理...")
+                # 不拋出異常，讓流程繼續
+            elif result.returncode == 0 and not file_exists:
+                # 如果返回碼是0但檔案不存在，可能是網路問題或檔案格式問題
                 raise Exception(f"Prefetch顯示成功但檔案不存在（可能是網路中斷或格式錯誤）。STDOUT: {result.stdout[:200]}")
-
-            raise Exception(f"Prefetch失敗: {result.stderr}")
+            else:
+                raise Exception(f"Prefetch失敗: {result.stderr}")
 
         if not sra_file.exists():
             raise Exception(f"SRA檔案不存在: {sra_file}")
