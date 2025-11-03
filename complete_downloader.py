@@ -824,10 +824,25 @@ def main():
     print(f"  總解壓線程數: {MAX_WORKERS * FASTERQ_THREADS}")
     print(f"  系統預留: 2線程")
 
-    # 創建必要目錄
-    SRA_TEMP_DIR.mkdir(parents=True, exist_ok=True)
-    TMP_DIR.mkdir(parents=True, exist_ok=True)
-    FASTQ_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    # 創建必要目錄（更安全的方式）
+    try:
+        SRA_TEMP_DIR.mkdir(parents=True, exist_ok=True)
+    except FileExistsError:
+        # 目錄已存在但可能是掛載點，檢查是否可寫
+        if not SRA_TEMP_DIR.exists():
+            raise Exception(f"無法創建目錄: {SRA_TEMP_DIR}")
+    
+    try:
+        TMP_DIR.mkdir(parents=True, exist_ok=True)
+    except FileExistsError:
+        if not TMP_DIR.exists():
+            raise Exception(f"無法創建目錄: {TMP_DIR}")
+    
+    try:
+        FASTQ_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    except FileExistsError:
+        if not FASTQ_OUTPUT_DIR.exists():
+            raise Exception(f"無法創建目錄: {FASTQ_OUTPUT_DIR}")
 
     # 移除主函數中的NAS連接，改為在每個線程中獨立創建
     # print(f"\n🔌 正在連接NAS...")
