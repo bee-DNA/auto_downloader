@@ -74,6 +74,7 @@ def list_nas_fastq_files(nas_uploader):
 def analyze_fastq_files(fastq_files):
     """分析 FASTQ 檔案，按樣本分組"""
     samples = defaultdict(list)
+    other_files = []  # _3, _4 等其他讀段檔案（保留，不處理）
     
     for filename in fastq_files:
         # 解析檔名：run_id_1.fastq 或 run_id_2.fastq
@@ -83,9 +84,16 @@ def analyze_fastq_files(fastq_files):
         elif filename.endswith('_2.fastq'):
             run_id = filename[:-8]  # 移除 _2.fastq
             samples[run_id].append('_2')
+        elif filename.endswith('_3.fastq') or filename.endswith('_4.fastq'):
+            # _3, _4 等其他讀段，忽略（保留在 NAS 上，不處理）
+            other_files.append(filename)
         else:
-            # 異常檔名
+            # 真正的異常檔名（不符合 *_N.fastq 格式）
             samples['__INVALID__'].append(filename)
+    
+    # 顯示其他讀段檔案資訊
+    if other_files:
+        print(f"\nℹ️  發現 {len(other_files)} 個其他讀段檔案（_3, _4 等），將保留不處理")
     
     return samples
 
