@@ -281,9 +281,12 @@ def get_nas_samples():
 
 def get_all_runs_from_file():
     """從runs.txt讀取所有樣本 (SRR, ERR, DRR)"""
-    runs_file = Path("runs.txt")
+    # 支援透過環境變數指定不同的 runs 檔案
+    runs_filename = os.environ.get("RUNS_FILE", "runs.txt")
+    runs_file = Path(runs_filename)
+    
     if not runs_file.exists():
-        print(f"⚠️ 找不到runs.txt")
+        print(f"⚠️ 找不到 {runs_filename}")
         return set()
 
     all_runs = set()
