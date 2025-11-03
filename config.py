@@ -80,6 +80,12 @@ MAX_WORKERS = int(os.environ.get("MAX_WORKERS", 8))
 # fasterq-dump 線程數（每個樣本用幾個線程解壓）
 FASTERQ_THREADS = int(os.environ.get("FASTERQ_THREADS", 4))
 
+# 使用 aria2 加速下載（多連接下載，可提升 4-10 倍速度）
+USE_ARIA2 = os.environ.get("USE_ARIA2", "yes").lower() in ["yes", "true", "1"]
+
+# aria2 連接數（每個檔案使用多少個連接同時下載）
+ARIA2_CONNECTIONS = int(os.environ.get("ARIA2_CONNECTIONS", 16))
+
 # ============================================
 # 進度檔案配置
 # ============================================

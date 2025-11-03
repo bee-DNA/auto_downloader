@@ -11,10 +11,13 @@ ENV DEBIAN_FRONTEND=noninteractive
 # 設定工作目錄
 WORKDIR /app
 
-# 安裝必要的系統套件 (wget, tar)
+# 安裝必要的系統套件 (wget, tar, 並行下載工具)
 RUN apt-get update && apt-get install -y --no-install-recommends \
     wget \
     tar \
+    aria2 \
+    axel \
+    curl \
     && rm -rf /var/lib/apt/lists/*
 
 # 下載並解壓縮 SRA Toolkit for Linux (Ubuntu)
