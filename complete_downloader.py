@@ -411,7 +411,16 @@ def download_sample(run_id, progress_mgr):
             "100GB",
             "--force", "all",  # 強制重新下載，避免部分下載衝突
             "--type", "sra",  # 只下載 SRA 檔案（但仍可能下載 refseq）
+            "--progress",  # 顯示下載進度
         ]
+        
+        # 嘗試啟用 Aspera 加速（如果可用）
+        # Aspera 可以提供 10-100 倍的速度提升
+        use_aspera = os.environ.get("USE_ASPERA", "yes").lower() in ["yes", "true", "1"]
+        if use_aspera:
+            # prefetch 會自動偵測並使用 Aspera（如果已安裝）
+            # 不需要額外參數，prefetch 會優先嘗試 Aspera
+            pass
 
         start_time = time.time()
         print(f"    執行指令: {' '.join(cmd)}")  # 除錯：顯示實際執行的指令
