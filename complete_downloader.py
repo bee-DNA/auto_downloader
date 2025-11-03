@@ -357,7 +357,7 @@ def download_sample(run_id, progress_mgr):
         if not nas_uploader.connect():
             raise Exception("NAS連接失敗")
         print(f"    🔌 樣本 {run_id} 的獨立NAS連接已建立")
-        # ==================== 步驟1: Prefetch ====================
+        # ==================== 步驟1: 下載 SRA ====================
         print(f"\n[1/5] 📥 下載SRA...", flush=True)
         
         # 檢查磁碟空間
@@ -400,66 +400,122 @@ def download_sample(run_id, progress_mgr):
         # 確認目錄創建成功
         if not sra_file.parent.exists():
             raise Exception(f"無法創建目錄: {sra_file.parent}")
-        # 構建 prefetch 命令
-        # 移除 --no-refseqs（不支援），改用容錯處理參考序列錯誤
-        cmd = [
-            PREFETCH_EXE,  # 使用配置中的路徑
-            run_id,
-            "--output-directory",
-            str(SRA_TEMP_DIR),
-            "--max-size",
-            "100GB",
-            "--force", "all",  # 強制重新下載，避免部分下載衝突
-            "--type", "sra",  # 只下載 SRA 檔案（但仍可能下載 refseq）
-            "--progress",  # 顯示下載進度
-        ]
         
-        # 嘗試啟用 Aspera 加速（如果可用）
-        # Aspera 可以提供 10-100 倍的速度提升
-        use_aspera = os.environ.get("USE_ASPERA", "yes").lower() in ["yes", "true", "1"]
-        if use_aspera:
-            # prefetch 會自動偵測並使用 Aspera（如果已安裝）
-            # 不需要額外參數，prefetch 會優先嘗試 Aspera
-            pass
-
+        # 檢查是否使用 aria2 加速下載
+        use_aria2 = USE_ARIA2 and shutil.which("aria2c") is not None
         start_time = time.time()
-        print(f"    執行指令: {' '.join(cmd)}")  # 除錯：顯示實際執行的指令
-        
-        # 加入重試機制（最多 3 次）
-        max_retries = 3
-        retry_delay = 10
         result = None
         
-        for attempt in range(1, max_retries + 1):
-            try:
-                result = subprocess.run(
-                    cmd, capture_output=True, text=True, timeout=PREFETCH_TIMEOUT
-                )
+        if use_aria2:
+            print(f"    🚀 使用 aria2 多連接加速下載（{ARIA2_CONNECTIONS} 連接）...")
+            
+            # 構建 SRA 下載 URL（嘗試多個鏡像）
+            prefix = run_id[:6]
+            mirrors = [
+                f"https://sra-downloadb.be-md.ncbi.nlm.nih.gov/sos4/sra-pub-run-28/{prefix}/{run_id}/{run_id}.sra",
+                f"https://sra-download.ncbi.nlm.nih.gov/traces/sra68/SRZ/{prefix}/{run_id}/{run_id}.sra",
+                f"https://sra-pub-run-odp.s3.amazonaws.com/sra/{run_id}/{run_id}",
+            ]
+            
+            # 嘗試每個鏡像直到成功
+            download_success = False
+            for mirror_idx, url in enumerate(mirrors, 1):
+                print(f"    🌐 嘗試鏡像 {mirror_idx}/{len(mirrors)}")
                 
-                # 如果成功或非網路錯誤，跳出重試
-                if result.returncode == 0:
-                    break
-                    
-                # 檢查是否為網路/連接錯誤
-                error_msg = result.stderr.lower()
-                is_network_error = any(keyword in error_msg for keyword in [
-                    "connection failed", "timeout", "network", "failed to download"
-                ])
+                aria2_cmd = [
+                    "aria2c",
+                    f"--max-connection-per-server={ARIA2_CONNECTIONS}",
+                    f"--split={ARIA2_CONNECTIONS}",
+                    "--min-split-size=1M",
+                    "--max-concurrent-downloads=1",
+                    "--continue=true",
+                    "--max-tries=5",
+                    "--retry-wait=3",
+                    "--timeout=60",
+                    "--connect-timeout=30",
+                    f"--dir={sra_file.parent}",
+                    f"--out={sra_file.name}",
+                    url
+                ]
                 
-                if is_network_error and attempt < max_retries:
-                    print(f"    ⚠️ 網路錯誤，{retry_delay}秒後重試 ({attempt}/{max_retries})...")
-                    time.sleep(retry_delay)
-                    continue
-                else:
-                    break
+                try:
+                    result = subprocess.run(
+                        aria2_cmd, capture_output=True, text=True, timeout=PREFETCH_TIMEOUT
+                    )
                     
-            except subprocess.TimeoutExpired:
-                if attempt < max_retries:
-                    print(f"    ⚠️ 超時，{retry_delay}秒後重試 ({attempt}/{max_retries})...")
-                    time.sleep(retry_delay)
-                    continue
-                else:
-                    raise
+                    if result.returncode == 0 and sra_file.exists():
+                        download_success = True
+                        print(f"    ✅ aria2 下載成功！")
+                        break
+                    else:
+                        print(f"    ⚠️ 鏡像 {mirror_idx} 失敗，嘗試下一個...")
+                        
+                except subprocess.TimeoutExpired:
+                    print(f"    ⚠️ 鏡像 {mirror_idx} 超時，嘗試下一個...")
+                except Exception as e:
+                    print(f"    ⚠️ 鏡像 {mirror_idx} 錯誤: {e}")
+            
+            # 如果 aria2 全部失敗，回退到 prefetch
+            if not download_success:
+                print(f"    ⚠️ aria2 所有鏡像都失敗，回退到 prefetch...")
+                use_aria2 = False
+        
+        # 如果不使用 aria2 或 aria2 失敗，使用傳統 prefetch
+        if not use_aria2:
+            # 構建 prefetch 命令
+            cmd = [
+                PREFETCH_EXE,
+                run_id,
+                "--output-directory",
+                str(SRA_TEMP_DIR),
+                "--max-size",
+                "100GB",
+                "--force", "all",
+                "--type", "sra",
+                "--progress",
+            ]
+            
+            # 嘗試啟用 Aspera 加速
+            use_aspera = os.environ.get("USE_ASPERA", "yes").lower() in ["yes", "true", "1"]
+            if use_aspera:
+                pass  # prefetch 會自動偵測並使用 Aspera
+            
+            print(f"    執行指令: {' '.join(cmd)}")
+            
+            # 加入重試機制（最多 3 次）
+            max_retries = 3
+            retry_delay = 10
+            
+            for attempt in range(1, max_retries + 1):
+                try:
+                    result = subprocess.run(
+                        cmd, capture_output=True, text=True, timeout=PREFETCH_TIMEOUT
+                    )
+                    
+                    # 如果成功或非網路錯誤，跳出重試
+                    if result.returncode == 0:
+                        break
+                        
+                    # 檢查是否為網路/連接錯誤
+                    error_msg = result.stderr.lower()
+                    is_network_error = any(keyword in error_msg for keyword in [
+                        "connection failed", "timeout", "network", "failed to download"
+                    ])
+                    
+                    if is_network_error and attempt < max_retries:
+                        print(f"    ⚠️ 網路錯誤，{retry_delay}秒後重試 ({attempt}/{max_retries})...")
+                        time.sleep(retry_delay)
+                        continue
+                    else:
+                        break
+                        
+                except subprocess.TimeoutExpired:
+                    if attempt < max_retries:
+                        print(f"    ⚠️ 超時，{retry_delay}秒後重試 ({attempt}/{max_retries})...")
+                        time.sleep(retry_delay)
+                        continue
+                    else:
+                        raise
         
         elapsed = time.time() - start_time
 
