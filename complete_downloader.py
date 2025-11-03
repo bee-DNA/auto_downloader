@@ -247,7 +247,7 @@ class ProgressManager:
 
 
 def get_nas_samples():
-    """獲取NAS上已有的樣本"""
+    """獲取NAS上已有的樣本（檢查是否有完整的 FASTQ 檔案）"""
     uploader = NASUploader(
         NAS_CONFIG["host"],
         NAS_CONFIG["port"],
@@ -263,12 +263,26 @@ def get_nas_samples():
         samples = set()
         try:
             files = uploader.sftp.listdir(NAS_CONFIG["fastq_path"])
+            
+            # 統計每個樣本有幾個檔案
+            sample_files = {}
             for f in files:
                 if f.endswith(".fastq"):
+                    # ERR2696422_1.fastq -> ERR2696422
                     sample = f.rsplit("_", 1)[0]
+                    if sample not in sample_files:
+                        sample_files[sample] = []
+                    sample_files[sample].append(f)
+            
+            # 只加入有檔案的樣本（SINGLE-END 有 _1，PAIRED-END 有 _1 和 _2）
+            for sample, files_list in sample_files.items():
+                # 只要有至少一個 _1.fastq，就算完整
+                # （SINGLE-END 只有 _1，PAIRED-END 會有 _1 和 _2）
+                has_file_1 = any(f.endswith("_1.fastq") for f in files_list)
+                if has_file_1:
                     samples.add(sample)
-        except:
-            pass
+        except Exception as e:
+            print(f"⚠️ 檢查NAS檔案時出錯: {e}")
 
         uploader.disconnect()
         return samples
