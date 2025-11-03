@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project specific
+download_progress.json
+download_progress.bak
+download_progress.tmp
+download_progress_backup_*.json
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+
+# Data (comment out if you want to track data)
+# data/sra_temp/
+# data/fastq_output/
+# data/tmp/
